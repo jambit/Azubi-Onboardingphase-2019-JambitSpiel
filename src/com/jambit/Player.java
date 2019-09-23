@@ -63,7 +63,7 @@ public class Player extends PositionFinder {
             System.out.println("Ja dann halt nicht...");
         }
         System.out.println("Hast du Hunger?");
-        System.out.println("Nein, erst wenn er 60 erreicht, dann gehst du drauf");
+        System.out.println("Nein, erst wenn er 100 erreicht, dann gehst du drauf");
         System.out.println("So, jetzt wünsche ich dir erstmal viel Spaß!!");
     }
 

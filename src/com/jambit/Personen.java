@@ -16,17 +16,6 @@ public class Personen {
     private static int auswahl;
     public static Scanner scanner = new Scanner(System.in);
 
-    void reden() {
-    }
-
-    /**
-     * @param antwortEins
-     * Standatisierte Antwortmöglichkeiten
-     * @param antwortZwei
-     * @param antwortDrei
-     * @param antwortVier
-     * @return
-     */
 
     int antworten(String antwortEins, String antwortZwei, String antwortDrei, String antwortVier) {
         System.out.println("[1] " + antwortEins);

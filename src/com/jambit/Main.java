@@ -6,9 +6,9 @@ public class Main extends Player {
     public static PositionFinder positionFinder = new PositionFinder();
     public static PersonPosition personPosition = new PersonPosition();
     public static Gegenstand gegenstandListe = new Gegenstand();
+    public static boolean kampfinfo = true;
 
     public static void main(String[] args) {
-
 
         //player.start();
         gegenstandListe.setGegenstand();
@@ -16,7 +16,7 @@ public class Main extends Player {
         positionFinder.setRoom();
         player.position = 1;
         while (checkLifeConditions(player)) {
-            player.hunger += 2;
+            player.hunger += 7;
             if (player.position < 100) {
                 move.moveScreen(player);
             }

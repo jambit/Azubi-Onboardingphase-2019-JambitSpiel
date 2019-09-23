@@ -12,7 +12,8 @@ public class Kampf extends Main {
     private static int auswahl;
     private static String name;
     int waffenstaerke;
-    int trefferWahscheinlichkeit;
+    int gegnerSchaden;
+    double gegnerWahrscheinlichkeiten;
     Main main = new Main();
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
 
@@ -64,9 +65,13 @@ public class Kampf extends Main {
         switch (name) {
             case "Cherry":
                 gegnerGesundheit = 1000;
+                gegnerSchaden = 20;
+                gegnerWahrscheinlichkeiten = 0.8;
                 break;
             case "Alma":
                 gegnerGesundheit = 1;
+                gegnerSchaden = 20;
+                gegnerWahrscheinlichkeiten = 0.6;
                 break;
         }
 
@@ -82,21 +87,54 @@ public class Kampf extends Main {
         auswahl = scanner.nextInt();
         switch (auswahl) {
             case 1:
-                if (Math.random() >= 0.8) {
+                if (Math.random() <= 0.8) {
                     gegnerGesundheit -= 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
                     System.out.println("Treffer! Du hast" + 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
-                }else {
+                } else {
                     System.out.println("Nicht getroffen!!!");
                 }
                 break;
             case 2:
+                if (Math.random() <= 0.6) {
+                    gegnerGesundheit -= 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
+                    System.out.println("Treffer! Du hast" + 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
+
+                } else {
+                    System.out.println("Nicht getroffen!!!");
+                }
                 break;
             case 3:
+                if (Math.random() >= 0.3) {
+                    gegnerGesundheit -= 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
+                    System.out.println("Treffer! Du hast" + 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
+
+                } else {
+                    System.out.println("Nicht getroffen!!!");
+                }
                 break;
+
         }
-
-
+        if (gegnerGesundheit <= 0) {
+            System.out.println("Gegner elimeniert");
+            switch (name) {
+                case "Cherry":
+                    Main.personPosition.cherry.lebend = false;
+                    break;
+                case "Alma":
+                    Main.personPosition.cherry.lebend = false;
+                    break;
+            }
+            System.out.println("Du hast gewonnen!!!");
+            kampfLäuft = false;
+        } else {
+            if (Math.random() >= gegnerWahrscheinlichkeiten) {
+                spielerGesundheit -= gegnerSchaden;
+                System.out.println("Der Gegner hat " +gegnerSchaden + " verursacht");
+            }else {
+                System.out.println("Gegner hat dich verfehlt!");
+            }
+        }
         //   }
     }
 

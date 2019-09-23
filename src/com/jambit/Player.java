@@ -16,6 +16,7 @@ public class Player extends PositionFinder {
     HashMap<Integer, String> temporarySpeicher = new HashMap<Integer, String>();
     public static LinkedHashMap<String, Integer> weaponsInventory = new LinkedHashMap<String, Integer>();
     int sprechenAuswahl;
+    int zwischenSpeicherZahlen;
     int gesundheit = 10;
     int hunger = 0;
     int intelligenz = 0;
@@ -75,7 +76,7 @@ public class Player extends PositionFinder {
         }
 
         System.out.println("Inventar hat noch " + (inventoryGegenstände - inventoryUsed) + " Platz");
-        System.out.println("Du kannst noch " + (inventoryWeapons - weaponsInventory.size()) + " tragen");
+        System.out.println("Du kannst noch " + (inventoryWeapons - weaponsInventory.size()) + " Waffen tragen");
         if (inventory.isEmpty()) {
             System.out.println("Nichts dabei");
         } else {
@@ -83,10 +84,11 @@ public class Player extends PositionFinder {
                 System.out.println(i + "   " + inventory.get(i));
             }
             System.out.println("Was willst du was benutzen?");
-            System.out.println("ja/nein");
-            zwischenSpeicher = scanner.next();
+            System.out.println("[1] ja");
+            System.out.println("[2] nein");
+            zwischenSpeicherZahlen = scanner.nextInt();
             System.out.println("ok");
-            if (zwischenSpeicher.equals("ja")) {
+            if (zwischenSpeicherZahlen == 1) {
                 int anzahl = 1;
                 for (String i : inventory.keySet()) {
                     System.out.println("[" + anzahl + "] " + i);
@@ -95,10 +97,13 @@ public class Player extends PositionFinder {
                 }
                 sprechenAuswahl = scanner.nextInt();
                 String x = temporarySpeicher.get(sprechenAuswahl);
+                Main.gegenstandListe.unseGegenstand(Main.player, x);
 
-
-
-
+                if (inventory.get(x) == 1) {
+                    inventory.remove(x);
+                } else {
+                    inventory.replace(x, inventory.get(x), inventory.get(x) - 1);
+                }
             }
         }
     }

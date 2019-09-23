@@ -10,7 +10,7 @@ public class Main extends Player {
     public static void main(String[] args) {
 
 
-        // player.start();
+        //player.start();
         gegenstandListe.setGegenstand();
         personPosition.setPersons();
         positionFinder.setRoom();

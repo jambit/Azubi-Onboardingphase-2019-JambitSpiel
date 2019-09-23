@@ -5,7 +5,7 @@ public class Alma extends Personen {
     void setAlma() {
         name = "Alma";
         gesundheit = 20;
-        position = 103;
+        position = 101;
     }
 
     void almaExecute() {

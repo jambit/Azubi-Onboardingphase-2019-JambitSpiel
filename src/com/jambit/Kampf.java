@@ -55,8 +55,8 @@ public class Kampf extends Main {
                 anzahl++;
             }
             auswahl = scanner.nextInt();
-            sprechenAuswahl = scanner.nextInt();
-            waffenwaelen(sprechenAuswahl);
+            String ausgewählteWaffe = temporarySave.get(auswahl);
+            waffenwaelen(ausgewählteWaffe);
             //Todo waffen verbrauchen nach benuzung
 
         }
@@ -138,7 +138,23 @@ public class Kampf extends Main {
         //   }
     }
 
-    void waffenwaelen(int wahl) {
-
+    void waffenwaelen(String ausgewählteWaffe) {
+        switch (ausgewählteWaffe){
+            case "Laptop":
+                waffenstaerke = 20;
+                break;
+            case "Handy":
+                waffenstaerke = 10;
+                break;
+            case "Kugelschreiber":
+                waffenstaerke = 7;
+                break;
+            case "Ladekabel":
+                waffenstaerke = 2;
+                break;
+            case "Feuerlöscher":
+                waffenstaerke = 30;
+                break;
+        }
     }
 }

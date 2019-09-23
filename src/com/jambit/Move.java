@@ -102,8 +102,29 @@ public class Move extends PersonPosition {
                         moveScreen(player);
                         break;
                     case 3:
-                        System.out.println("Hier befindet sich eine Wand. Wähle eine andere Option.");
-                        moveScreen(player);
+                        System.out.println("Mit dieser Aktion gehst du ins 2. Stockwerk. Welches Stockwerk wählst du?");
+                        System.out.println("[1] 2. Stockwerk");
+                        System.out.println("[2] 3. Stockwerk");
+                        int stockwerk = scanner.nextInt();
+                        switch (stockwerk){
+                            case 1:
+                                System.out.println("In welchen Raum möchtest du gehen?");
+                                System.out.println("[1] Helpdesk");
+                                System.out.println("[2] Kickerraum");
+                                int raum = scanner.nextInt();
+                                switch (raum){
+                                    case 1:
+                                        player.position = 201;
+                                        break;
+                                    case 2:
+                                        player.position = 202;
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Du hast dich für das 3.Stockwerk entschieden.");
+                                break;
+                        }
                         break;
                     case 4:
                         player.position = 106;

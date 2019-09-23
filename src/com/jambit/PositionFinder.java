@@ -7,6 +7,8 @@ public class PositionFinder extends PersonPosition {
     public static Java java = new Java();
     public static Kalimantan kalimantan = new Kalimantan();
     public static Deli deli = new Deli();
+    public static Helpdesk helpdesk = new Helpdesk();
+    public static Kickerraum kickerraum = new Kickerraum();
 
      static void setRoom() {
         empfang.setEmpfang();
@@ -14,6 +16,8 @@ public class PositionFinder extends PersonPosition {
         taBuero.setTABuero();
         java.setJava();
         deli.setDeli();
+        helpdesk.setHelpdesk();
+        kickerraum.setKickerraum();
     }
 
     void findPosition(Player player) {
@@ -35,6 +39,12 @@ public class PositionFinder extends PersonPosition {
                 break;
             case 106:
                 kalimantan.execute(player);
+                break;
+            case 201:
+                helpdesk.execute(player);
+                break;
+            case 202:
+                kickerraum.execute(player);
                 break;
         }
     }

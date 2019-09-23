@@ -106,7 +106,7 @@ public class Room {
         }
 
 
-        if ( Main.gegenstandListe.kathegorie.get(x) == 1) {
+        if (Main.gegenstandListe.kathegorie.get(x) == 1) {
             if (player.inventoryUsed == player.inventoryGegenstände) {
                 System.out.println("Kein Platz mehr im Inventar");
                 option(player, position);
@@ -123,15 +123,15 @@ public class Room {
                 System.out.println("Kein Platz mehr für weitere Waffen");
                 option(player, position);
             } else {
-                if (!player.weaponsInventory.containsKey(x)){
+                if (!player.weaponsInventory.containsKey(x)) {
                     player.weaponsInventory.put(x, 1);
-                }else {
+                } else {
                     player.weaponsInventory.replace(x, player.weaponsInventory.get(x), (player.weaponsInventory.get(x) - 1));
                 }
             }
 
         }
-        
+
         if (gegenstaende.get(x) == 1) {
             gegenstaende.remove(x);
         } else {

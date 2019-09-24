@@ -22,7 +22,7 @@ public class Room {
         System.out.println("[3] " + spezial);
         System.out.println("[4] Raum verlassen");
         System.out.println("[5] Inventar");
-        System.out.println("[6] Stuatus");
+        System.out.println("[6] Status");
         auswahl = scanner.nextInt();
         switch (auswahl) {
             case 1:

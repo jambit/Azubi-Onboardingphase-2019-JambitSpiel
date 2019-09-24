@@ -7,6 +7,7 @@ public class PersonPosition extends Personen {
     public static Cherry cherry = new Cherry();
     public static Alma alma = new Alma();
     public static Finn finn = new Finn();
+    public static Adalbert adalbert = new Adalbert();
 
 
     void setPersons() {
@@ -16,6 +17,8 @@ public class PersonPosition extends Personen {
         personPositionList.put(alma, alma.position);
         finn.setFinn();
         personPositionList.put(finn, finn.position);
+        adalbert.setAdalbert();
+        personPositionList.put(adalbert, adalbert.position);
     }
 
     void triggerPerson(String x) {
@@ -29,6 +32,8 @@ public class PersonPosition extends Personen {
             case "Finn":
                 finn.finnExecute();
                 break;
+            case "Adalbert":
+                adalbert.adalbertExecute();
         }
     }
 }

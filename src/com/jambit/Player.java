@@ -24,8 +24,9 @@ public class Player extends PositionFinder {
     String name;
     int staerke;
     int position;
-    boolean badge = false;
-    boolean badge2 = false;
+    //TODO Wichtig auf False setzen
+    boolean badge = true;
+    boolean badge2 = true;
     boolean maus;
     int inventoryGegenstände = 5;
     int inventoryWeapons = 2;

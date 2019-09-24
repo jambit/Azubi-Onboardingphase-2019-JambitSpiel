@@ -90,6 +90,9 @@ public class Move extends PersonPosition {
                     case 4:
                         player.position = 104;
                         break;
+                    case 5:
+
+                      break;
                 }
                 break;
             case 4:
@@ -110,7 +113,7 @@ public class Move extends PersonPosition {
                 }
                 break;
             case 5:
-                switch (auswahl){
+                switch (auswahl) {
                     case 1:
                         player.position = 4;
                         break;
@@ -121,14 +124,14 @@ public class Move extends PersonPosition {
                         System.out.println("Mit dieser Aktion gehst du ins 2. Stockwerk. Welches Stockwerk wählst du?");
                         System.out.println("[1] 2. Stockwerk");
                         System.out.println("[2] 3. Stockwerk");
-                        int stockwerk = scanner.nextInt();
-                        switch (stockwerk){
+                        auswahl= scanner.nextInt();
+                        switch (auswahl) {
                             case 1:
                                 System.out.println("In welchen Raum möchtest du gehen?");
                                 System.out.println("[1] Helpdesk");
                                 System.out.println("[2] Kickerraum");
                                 int raum = scanner.nextInt();
-                                switch (raum){
+                                switch (raum) {
                                     case 1:
                                         player.position = 201;
                                         break;
@@ -139,7 +142,10 @@ public class Move extends PersonPosition {
                                 break;
                             case 2:
                                 System.out.println("Du hast dich für das 3.Stockwerk entschieden.");
+                                moveScreen(player);
                                 break;
+                            default:moveScreen(player);
+                            break;
                         }
                     case 4:
                         System.out.println("Hier befindet sich eine Wand. Wähle eine andere Option.");

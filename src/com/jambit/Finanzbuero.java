@@ -11,6 +11,7 @@ public class Finanzbuero extends Room {
         switch (auswahl) {
             case 3:
                 setMatheaufgaben(player);
+                execute(player);
                 break;
             case 4:
                 player.position = 5;

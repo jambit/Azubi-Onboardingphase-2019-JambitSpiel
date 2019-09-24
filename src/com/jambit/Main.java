@@ -20,16 +20,17 @@ public class Main extends Player {
         positionFinder.setRoom();
         player.position = 1;
         while (checkLifeConditions(player)) {
-            player.hunger += 7;
+            player.hunger += 0;
             if (player.position < 100) {
                 move.moveScreen(player);
             }
             positionFinder.findPosition(player);
         }
+        System.out.println("You Died");
     }
 
     static boolean checkLifeConditions(Player player) {
-        if (player.gesundheit == 0 || player.hunger >= 60) {
+        if (player.gesundheit == 0 || player.hunger >= 100) {
             return false;
         }
         return true;

@@ -11,7 +11,7 @@ public class Kickerraum extends Room {
             case 3:
                 break;
             case 4:
-                player.position = 4;
+                player.position = 5;
                 break;
         }
     }

@@ -3,7 +3,7 @@ package com.jambit;
 import javax.sound.midi.*;
 
 public class Musik {
-    private static void playAlleMeineEntchen()
+    public static void playAlleMeineEntchen()
             throws Exception {
         //Partitur {{Tonhoehe, DauerInViertelNoten, AnzahlWdh},...}
         final int DATA[][] = {

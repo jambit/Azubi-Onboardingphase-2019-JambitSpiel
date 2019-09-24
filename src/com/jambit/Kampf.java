@@ -57,7 +57,7 @@ public class Kampf extends Main {
             auswahl = scanner.nextInt();
             String ausgewählteWaffe = temporarySave.get(auswahl);
             waffenwaelen(ausgewählteWaffe);
-            //Todo waffen verbrauchen nach benuzung
+            player.weaponsInventory.remove(ausgewählteWaffe);
 
         }
 
@@ -130,8 +130,8 @@ public class Kampf extends Main {
         } else {
             if (Math.random() >= gegnerWahrscheinlichkeiten) {
                 spielerGesundheit -= gegnerSchaden;
-                System.out.println("Der Gegner hat " +gegnerSchaden + " verursacht");
-            }else {
+                System.out.println("Der Gegner hat " + gegnerSchaden + " verursacht");
+            } else {
                 System.out.println("Gegner hat dich verfehlt!");
             }
         }
@@ -139,7 +139,7 @@ public class Kampf extends Main {
     }
 
     void waffenwaelen(String ausgewählteWaffe) {
-        switch (ausgewählteWaffe){
+        switch (ausgewählteWaffe) {
             case "Laptop":
                 waffenstaerke = 20;
                 break;

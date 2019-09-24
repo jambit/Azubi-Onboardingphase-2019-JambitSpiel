@@ -18,7 +18,7 @@ public class Player extends PositionFinder {
     public static LinkedHashMap<String, Integer> weaponsInventory = new LinkedHashMap<String, Integer>();
     int sprechenAuswahl;
     int zwischenSpeicherZahlen;
-    int gesundheit = 10;
+    int gesundheit = 100;
     int hunger = 0;
     int intelligenz = 0;
     String name;
@@ -60,24 +60,24 @@ public class Player extends PositionFinder {
         checkDAUint();
         int x = scanner.nextInt();
         if (x <= 40) {
-            intelligenz = 8;
-            staerke = 12;
+            intelligenz = 20;
+            staerke = 40;
         } else {
-            intelligenz = 12;
-            staerke = 8;
+            intelligenz = 40;
+            staerke = 20;
         }
         System.out.println("Bist du im Kick-it like jambit?");
         System.out.println("ja/nein");
         zwischenSpeicher = scanner.next();
         System.out.println("ok");
         if (zwischenSpeicher.equals("ja")) {
-            intelligenz += -1;
-            staerke += 2;
+            intelligenz -= 7;
+            staerke += 12;
         } else if (zwischenSpeicher.equals("nein")) {
-            intelligenz++;
+            intelligenz += 5;
         } else {
-            intelligenz -= 5;
-            staerke -= 2;
+            intelligenz -= 20;
+            staerke -= 20;
             System.out.println("Ja dann halt nicht...");
         }
         System.out.println("Hast du Hunger?");

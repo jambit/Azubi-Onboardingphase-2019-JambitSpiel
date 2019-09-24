@@ -7,10 +7,11 @@ public class Main extends Player {
     public static PersonPosition personPosition = new PersonPosition();
     public static Gegenstand gegenstandListe = new Gegenstand();
     public static boolean kampfinfo = true;
+    public static ThreadForMusic threadForMusic = new ThreadForMusic();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        //player.start();
+        player.start();
         gegenstandListe.setGegenstand();
         personPosition.setPersons();
         positionFinder.setRoom();

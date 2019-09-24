@@ -1,6 +1,6 @@
 /**
  * Player
- *is wichtig fürs Spiel
+ * is wichtig fürs Spiel
  */
 
 package com.jambit;
@@ -8,6 +8,7 @@ package com.jambit;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Player extends PositionFinder {
     Scanner scanner = new Scanner(System.in);
@@ -29,12 +30,29 @@ public class Player extends PositionFinder {
     int inventoryWeapons = 2;
     int inventoryUsed;
     int inventoryUsedWeapons;
+    public static ThreadForMusic threadForMusic = new ThreadForMusic();
+    public static Musik musik = new Musik();
 
-    void start() {
-        /**
-         * initialisiert ein Intro, welches Variablen seztzt
-         *
-         */
+    void start() throws InterruptedException {
+
+        System.out.println("\n" +
+                "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo \n" +
+                "   `888      .888.      `88.       .888' `888'   `Y8b `888' 8'   888   `8 \n" +
+                "    888     .8\"888.      888b     d'888   888     888  888       888      \n" +
+                "    888    .8' `888.     8 Y88. .P  888   888oooo888'  888       888      \n" +
+                "    888   .88ooo8888.    8  `888'   888   888    `88b  888       888      \n" +
+                "    888  .8'     `888.   8    Y     888   888    .88P  888       888      \n" +
+                ".o. 88P o88o     o8888o o8o        o888o o888bood8P'  o888o     o888o     \n" +
+                "`Y888P                                                                    \n" +
+                "                                                                          \n" +
+                "                                                                          \n");
+        System.out.println("Drücke eine Taste um fortzufahren");
+        while (!scanner.hasNext()) {
+            TimeUnit.SECONDS.sleep(1);
+        }
+        scanner.nextLine();
+
+
         System.out.println("Hallo Fremder, wilkommen bei Jambit!");
         System.out.println("Wie ist dein Name?");
         name = scanner.nextLine();
@@ -71,7 +89,7 @@ public class Player extends PositionFinder {
         for (String i : inventory.keySet()) {
             inventoryUsed = inventoryUsed + inventory.get(i);
         }
-        for (String i : weaponsInventory.keySet()){
+        for (String i : weaponsInventory.keySet()) {
             inventoryUsedWeapons = inventoryUsedWeapons + weaponsInventory.get(i);
         }
 

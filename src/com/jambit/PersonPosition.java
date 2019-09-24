@@ -8,6 +8,7 @@ public class PersonPosition extends Personen {
     public static Alma alma = new Alma();
     public static Finn finn = new Finn();
     public static Adalbert adalbert = new Adalbert();
+    public static Marion marion = new Marion();
 
 
     void setPersons() {
@@ -19,6 +20,8 @@ public class PersonPosition extends Personen {
         personPositionList.put(finn, finn.position);
         adalbert.setAdalbert();
         personPositionList.put(adalbert, adalbert.position);
+        marion.setMarion();
+        personPositionList.put(marion,marion.position);
     }
 
     void triggerPerson(String x) {
@@ -34,6 +37,10 @@ public class PersonPosition extends Personen {
                 break;
             case "Adalbert":
                 adalbert.adalbertExecute();
+                break;
+            case "Marion":
+                marion.marionExecute();
+                break;
         }
     }
 }

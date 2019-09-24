@@ -115,8 +115,7 @@ public class Move extends PersonPosition {
                         player.position = 4;
                         break;
                     case 2:
-                        System.out.println("Hier befindet sich eine Wand. Wähle eine andere Option.");
-                        moveScreen(player);
+                        player.position = 107;
                         break;
                     case 3:
                         System.out.println("Mit dieser Aktion gehst du ins 2. Stockwerk. Welches Stockwerk wählst du?");
@@ -144,6 +143,7 @@ public class Move extends PersonPosition {
                         }
                     case 4:
                         System.out.println("Hier befindet sich eine Wand. Wähle eine andere Option.");
+                        moveScreen(player);
                         break;
                 }
                 break;

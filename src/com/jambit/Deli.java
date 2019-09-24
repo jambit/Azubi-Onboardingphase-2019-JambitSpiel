@@ -44,6 +44,8 @@ public class Deli extends Room {
     }
 
     void setDeli() {
+        gegenstaende.put("Ladekabel", 2);
+        gegenstaende.put("Erdbeeren", 1);
     }
 }
 

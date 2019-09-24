@@ -17,6 +17,6 @@ public class Helpdesk extends Room{
     }
 
     void setHelpdesk(){
-
+        gegenstaende.put("Spezi", 1);
     }
 }

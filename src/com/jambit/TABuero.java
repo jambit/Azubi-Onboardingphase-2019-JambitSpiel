@@ -38,5 +38,6 @@ public class TABuero extends Room {
         }
     }
     void setTABuero(){
+        gegenstaende.put("Kugelschreiber", 2);
     }
 }

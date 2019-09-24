@@ -29,5 +29,6 @@ public class Kalimantan extends Room {
 
     }
     void setKalimantan() {
+        gegenstaende.put("Feuerlöscher",2);
     }
 }

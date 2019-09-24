@@ -17,5 +17,6 @@ public class Java extends Room{
         }
     }
     void setJava(){
+        gegenstaende.put("Kuchen", 2);
     }
 }

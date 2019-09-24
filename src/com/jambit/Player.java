@@ -53,7 +53,6 @@ public class Player extends PositionFinder {
         }
         scanner.nextLine();
 
-
         System.out.println("Hallo Fremder, wilkommen bei Jambit!");
         System.out.println("Wie ist dein Name?");
         name = scanner.nextLine();

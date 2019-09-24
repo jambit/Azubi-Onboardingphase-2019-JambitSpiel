@@ -4,6 +4,7 @@ import javax.sound.midi.*;
 
 public class Musik {
     public static void playAlleMeineEntchen()
+            
             throws Exception {
         //Partitur {{Tonhoehe, DauerInViertelNoten, AnzahlWdh},...}
         final int DATA[][] = {

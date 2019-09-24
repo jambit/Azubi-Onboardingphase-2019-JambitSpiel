@@ -123,6 +123,12 @@ public class Player extends PositionFinder {
                 } else {
                     inventory.replace(x, inventory.get(x), inventory.get(x) - 1);
                 }
+                if (gesundheit >= 150) {
+                    gesundheit = 100;
+                }
+                if (hunger <= 0 ){
+                    hunger = 0;
+                }
             }
         }
     }

@@ -31,6 +31,7 @@ public class Main extends Player {
 
     static boolean checkLifeConditions(Player player) {
         if (player.gesundheit == 0 || player.hunger >= 100) {
+            System.out.println("Verhungert oder hast kein Leben mehr");
             return false;
         }
         return true;

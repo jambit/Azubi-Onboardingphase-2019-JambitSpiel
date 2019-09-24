@@ -35,6 +35,8 @@ public class Alma extends Personen {
                 System.out.println("'Ich habe eine, aber ich gebe sie dir nur über meine Leiche.'");
                 Kampf kampf = new Kampf(name);
                 kampf.executeFight();
+                System.out.println("Du hast Alma besiegt und von ihr eine Schlüsselkarte gestohlen.");
+                Main.player.badge2 = true;
                 break;
             case 3:
                 System.out.println("'Wenn du nichts anderes zu tun hast, dann geh doch kickern.'");

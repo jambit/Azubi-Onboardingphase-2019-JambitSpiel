@@ -25,6 +25,7 @@ public class Player extends PositionFinder {
     int position;
     boolean badge = false;
     boolean badge2 = false;
+    boolean maus;
     int inventoryGegenstände = 5;
     int inventoryWeapons = 2;
     int inventoryUsed;

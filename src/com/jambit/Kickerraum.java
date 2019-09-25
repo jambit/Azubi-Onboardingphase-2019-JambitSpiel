@@ -20,6 +20,7 @@ public class Kickerraum extends Room {
                 break;
             case 4:
                 player.position = 5;
+                System.out.println("Du befindest dich wieder im 3. Stockwerk.");
                 break;
         }
     }
@@ -38,13 +39,13 @@ public class Kickerraum extends Room {
             }
         }
         if (toreplayer == 5){
-            System.out.println("Glückwunsch, du hast gewonnen. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
             Main.player.intelligenz += 10;
+            System.out.println("Glückwunsch, du hast gewonnen. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
             toreplayer = 0;
             torematch = 0;
         } else {
-            System.out.println("Schade, du hast verloren. Aber beim nächsten Mal läuft es bestimmt besser. Leider hast du Intelligenz verloren. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
             Main.player.intelligenz -= 5;
+            System.out.println("Schade, du hast verloren. Aber beim nächsten Mal läuft es bestimmt besser. Leider hast du Intelligenz verloren. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
             toreplayer = 0;
             torematch = 0;
         }

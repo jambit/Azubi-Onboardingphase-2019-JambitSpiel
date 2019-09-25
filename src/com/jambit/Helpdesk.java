@@ -12,6 +12,7 @@ public class Helpdesk extends Room{
                 break;
             case 4:
                 player.position = 5;
+                System.out.println("Du befindest dich wieder im 3. Stockwerk.");
                 break;
         }
     }

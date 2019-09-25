@@ -31,6 +31,7 @@ public class Adalbert extends Personen {
                             System.out.println("'Ich hab dir schon eine gegeben.'");
                         break;
                 }
+                break;
             case 2:
                 System.out.println("'Was störst du mich dann?'");
                 break;

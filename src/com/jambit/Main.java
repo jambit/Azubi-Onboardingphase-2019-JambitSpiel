@@ -11,13 +11,14 @@ public class Main extends Player {
 
     public static void main(String[] args) throws Exception {
 
-        //player.start();
+        player.start();
 
         gegenstandListe.setGegenstand();
         personPosition.setPersons();
         personPosition.setPersonPositionList();
         positionFinder.setRoom();
         player.position = 1;
+        musikPlayer.starteAbspielen("audio/Scottish Battle Music - William Wallace.mp3");
         while (checkLifeConditions(player)) {
             player.hunger += 0;
             if (player.position < 100) {
@@ -25,7 +26,23 @@ public class Main extends Player {
             }
             positionFinder.findPosition(player);
         }
-        System.out.println("You Died");
+
+
+
+
+
+
+
+        System.out.println("\n" +
+                "     )    )           (     (        (      \n" +
+                "  ( /( ( /(           )\\ )  )\\ )     )\\ )   \n" +
+                "  )\\()))\\())     (   (()/( (()/( (  (()/(   \n" +
+                " ((_)\\((_)\\      )\\   /(_)) /(_)))\\  /(_))  \n" +
+                "__ ((_) ((_)  _ ((_) (_))_ (_)) ((_)(_))_   \n" +
+                "\\ \\ / // _ \\ | | | |  |   \\|_ _|| __||   \\  \n" +
+                " \\ V /| (_) || |_| |  | |) || | | _| | |) | \n" +
+                "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
+                "                                            \n");
         musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
     }
 

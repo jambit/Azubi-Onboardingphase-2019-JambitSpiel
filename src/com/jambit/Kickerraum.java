@@ -27,7 +27,6 @@ public class Kickerraum extends Room {
     void kickern() {
         while (torematch != 5 && toreplayer != 5) {
             zufallszahl = (int) (Math.random() * 20) + 1;
-            System.out.println(zufallszahl); // TODO muss wieder entfernt werden
             System.out.println("Gib eine Zahl zwischen 1 und 20 ein.");
             match = kicker.nextInt();
             if (zufallszahl - match > 5 || zufallszahl - match < -5) {

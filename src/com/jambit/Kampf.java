@@ -139,8 +139,8 @@ public class Kampf extends Main {
                 if (Math.random() >= gegnerWahrscheinlichkeiten) {
                     spielerGesundheit -= gegnerSchaden;
                     System.out.println("Der Gegner hat " + gegnerSchaden + " verursacht");
-                    if (spielerGesundheit <= 0){
-sterbenImKampf();
+                    if (spielerGesundheit <= 0) {
+                        sterbenImKampf();
                     }
                 } else {
                     System.out.println("Gegner hat dich verfehlt!");
@@ -173,7 +173,7 @@ sterbenImKampf();
         }
     }
 
-    void sterbenImKampf(){
+    void sterbenImKampf() {
         musikPlayer.stop();
         System.out.println("\n" +
                 "     )    )           (     (        (      \n" +

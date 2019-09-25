@@ -27,7 +27,6 @@ public class Main extends Player {
             positionFinder.findPosition(player);
         }
 
-
         System.out.println("\n" +
                 "     )    )           (     (        (      \n" +
                 "  ( /( ( /(           )\\ )  )\\ )     )\\ )   \n" +

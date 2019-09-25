@@ -16,6 +16,7 @@ public class Player extends PositionFinder {
     HashMap<String, Integer> inventory = new HashMap<String, Integer>();
     HashMap<Integer, String> temporarySpeicher = new HashMap<Integer, String>();
     public static LinkedHashMap<String, Integer> weaponsInventory = new LinkedHashMap<String, Integer>();
+    HashMap<String, Boolean> questList = new HashMap<String, Boolean>();
     int sprechenAuswahl;
     int zwischenSpeicherZahlen;
     double gesundheit = 100;
@@ -133,6 +134,17 @@ public class Player extends PositionFinder {
                     hunger = 0;
                 }
             }
+        }
+    }
+
+    void checkQuest() {
+        if (questList.isEmpty()) {
+            System.out.println("Keine aktive quest");
+        } else {
+            for (String i : questList.keySet()) {
+                System.out.println(i + "   " + questList.get(i));
+            }
+
         }
     }
 

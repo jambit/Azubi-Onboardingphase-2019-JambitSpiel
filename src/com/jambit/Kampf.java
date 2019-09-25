@@ -8,7 +8,7 @@ public class Kampf extends Main {
     int sprechenAuswahl;
     public double gegnerGesundheit;
     public double spielerGesundheit;
-    private boolean kampfLäuft;
+    private boolean kampfLäuft = true;
     private static int auswahl;
     private static String name;
     int waffenstaerke;
@@ -16,6 +16,7 @@ public class Kampf extends Main {
     double gegnerWahrscheinlichkeiten;
     Main main = new Main();
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
+    MusikPlayer musikPlayer = new MusikPlayer();
 
 
     public Kampf(String name) {
@@ -23,7 +24,8 @@ public class Kampf extends Main {
     }
 
     void executeFight() {
-
+        musikPlayer.stop();
+        musikPlayer.starteAbspielen("audio/Scottish Battle Music - Scottish Clan.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
             System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");
@@ -75,7 +77,7 @@ public class Kampf extends Main {
                 break;
         }
 
-        while (kampfLäuft) {
+        while (kampfLäuft == true) {
 
             System.out.println("Du hast noch " + spielerGesundheit + " Gesundheit");
             System.out.println("Dein Gegner hat " + gegnerGesundheit + " Gesundheit");
@@ -88,7 +90,7 @@ public class Kampf extends Main {
             switch (auswahl) {
                 case 1:
                     if (Math.random() <= 0.8) {
-                        gegnerGesundheit -= 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
+                        gegnerGesundheit -= ((20 * Main.player.staerke / 10) + (Main.player.intelligenz / 10 * waffenstaerke));
                         System.out.println("Treffer! Du hast" + 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
                     } else {
@@ -136,6 +138,8 @@ public class Kampf extends Main {
                 }
             }
         }
+        Main.player.gesundheit = spielerGesundheit;
+        musikPlayer.stop();
     }
 
     void waffenwaelen(String ausgewählteWaffe) {

@@ -18,13 +18,14 @@ public class Player extends PositionFinder {
     public static LinkedHashMap<String, Integer> weaponsInventory = new LinkedHashMap<String, Integer>();
     int sprechenAuswahl;
     int zwischenSpeicherZahlen;
-    int gesundheit = 100;
+    double gesundheit = 100;
     int hunger = 0;
-    int intelligenz = 0;
+    double intelligenz = 0;
     String name;
-    int staerke;
+    double staerke;
     int position;
     //TODO Wichtig auf False setzen
+
     boolean badge = true;
     boolean badge2 = true;
     boolean maus;
@@ -128,7 +129,7 @@ public class Player extends PositionFinder {
                 if (gesundheit >= 150) {
                     gesundheit = 100;
                 }
-                if (hunger <= 0 ){
+                if (hunger <= 0) {
                     hunger = 0;
                 }
             }

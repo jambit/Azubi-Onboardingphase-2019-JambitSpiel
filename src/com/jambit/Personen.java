@@ -8,7 +8,7 @@ public class Personen {
     int position;
     String name;
     int gesundheit;
-    boolean lebend;
+    boolean lebend = true;
     public static String antwortEins;
     public static String antwortZwei;
     public static String antwortDrei;

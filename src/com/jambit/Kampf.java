@@ -19,14 +19,13 @@ public class Kampf extends Main {
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
     MusikPlayer musikPlayer = new MusikPlayer();
 
-
     public Kampf(String name) {
         this.name = name;
     }
 
     void executeFight() {
         Main.musikPlayer.stop();
-        musikPlayer.starteAbspielen("audio/Scottish Battle Music - Scottish Clan.mp3");
+        musikPlayer.starteAbspielen("audio/harold-faltermeyer-axel-f-1984-beverly-hills-cop-soundtrack.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
             System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");

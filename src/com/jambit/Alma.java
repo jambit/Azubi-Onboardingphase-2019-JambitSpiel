@@ -8,7 +8,7 @@ public class Alma extends Personen {
         position = 103;
     }
 
-    void almaExecute() {
+    void almaExecute(Alma alma) {
         System.out.println("'Was machst du die ganze Zeit?'");
         int i = antworten("schlafen", "Kaffe trinken", "kickern", "arbeiten");
         switch (i) {
@@ -42,6 +42,8 @@ public class Alma extends Personen {
                 System.out.println("'Wenn du nichts anderes zu tun hast, dann geh doch kickern.'");
                 break;
         }
+        alma.position = 104;
+        Main.personPosition.setPersonPositionList();
     }
 }
 

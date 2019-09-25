@@ -8,7 +8,7 @@ public class Cherry extends Personen {
         position = 101;
     }
 
-    void cherryExecute() {
+    void cherryExecute(Cherry cherry) {
         System.out.println("'Hast du dein Berichtsheft schon fertig gemacht?'");
         int i = antworten2("Ja", "Nein");
         switch (i) {
@@ -27,6 +27,8 @@ public class Cherry extends Personen {
                         break;
                 }
         }
+        cherry.position = 105;
+        Main.personPosition.setPersonPositionList();
     }
 }
 

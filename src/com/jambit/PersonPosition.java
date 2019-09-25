@@ -34,13 +34,13 @@ public class PersonPosition extends Personen {
     void triggerPerson(String x) {
         switch (x) {
             case "Cherry":
-                cherry.cherryExecute();
+                cherry.cherryExecute(cherry);
                 break;
             case "Alma":
-                alma.almaExecute();
+                alma.almaExecute(alma);
                 break;
             case "Finn":
-                finn.finnExecute();
+                finn.finnExecute(finn);
                 break;
             case "Adalbert":
                 adalbert.adalbertExecute();

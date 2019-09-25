@@ -15,6 +15,7 @@ public class Main extends Player {
 
         gegenstandListe.setGegenstand();
         personPosition.setPersons();
+        personPosition.setPersonPositionList();
         positionFinder.setRoom();
         player.position = 1;
         while (checkLifeConditions(player)) {

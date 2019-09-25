@@ -13,14 +13,21 @@ public class PersonPosition extends Personen {
 
     void setPersons() {
         cherry.setCherry();
-        personPositionList.put(cherry, cherry.position);
+
         alma.setAlma();
-        personPositionList.put(alma, alma.position);
+
         finn.setFinn();
-        personPositionList.put(finn, finn.position);
+
         adalbert.setAdalbert();
-        personPositionList.put(adalbert, adalbert.position);
+
         marion.setMarion();
+
+    }
+    void setPersonPositionList(){
+        personPositionList.put(cherry, cherry.position);
+        personPositionList.put(alma, alma.position);
+        personPositionList.put(finn, finn.position);
+        personPositionList.put(adalbert, adalbert.position);
         personPositionList.put(marion,marion.position);
     }
 

@@ -10,6 +10,7 @@ public class PositionFinder extends PersonPosition {
     public static Helpdesk helpdesk = new Helpdesk();
     public static Kickerraum kickerraum = new Kickerraum();
     public static Finanzbuero finanzbuero = new Finanzbuero();
+    public static ChefBuero chefBuero = new ChefBuero();
 
      static void setRoom() {
         empfang.setEmpfang();
@@ -20,6 +21,7 @@ public class PositionFinder extends PersonPosition {
         helpdesk.setHelpdesk();
         kickerraum.setKickerraum();
         finanzbuero.setFinanzbuero();
+        chefBuero.setChefBuero();
     }
 
     void findPosition(Player player) {
@@ -44,6 +46,9 @@ public class PositionFinder extends PersonPosition {
                 break;
             case 107:
                 finanzbuero.execute(player);
+                break;
+            case 108:
+                chefBuero.execute(player);
                 break;
             case 201:
                 helpdesk.execute(player);

@@ -11,7 +11,7 @@ public class Main extends Player {
 
     public static void main(String[] args) throws Exception {
 
-        player.start();
+        //player.start();
 
         gegenstandListe.setGegenstand();
         personPosition.setPersons();

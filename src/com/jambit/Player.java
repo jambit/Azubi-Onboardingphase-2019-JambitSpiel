@@ -30,6 +30,7 @@ public class Player extends PositionFinder {
     boolean badge = true;
     boolean badge2 = true;
     boolean maus;
+    boolean nasenspray;
     int inventoryGegenstände = 5;
     int inventoryWeapons = 2;
     int inventoryUsed;

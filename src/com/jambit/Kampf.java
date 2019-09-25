@@ -80,6 +80,10 @@ public class Kampf extends Main {
                 gegnerSchaden = 10 + (anzahlKämpfe * 7);
                 gegnerWahrscheinlichkeiten = 0.5 + (anzahlKämpfe * 0.1);
                 break;
+            case "Max":
+                gegnerGesundheit = 800;
+                gegnerSchaden = 20;
+                gegnerWahrscheinlichkeiten = 0.7;
         }
 
         while (kampfLäuft == true) {
@@ -129,7 +133,10 @@ public class Kampf extends Main {
                         Main.personPosition.cherry.lebend = false;
                         break;
                     case "Alma":
-                        Main.personPosition.cherry.lebend = false;
+                        Main.personPosition.alma.lebend = false;
+                        break;
+                    case "Max":
+                        Main.personPosition.max.lebend = false;
                         break;
                 }
                 System.out.println("Du hast gewonnen!!!");

@@ -12,6 +12,8 @@ public class PersonPosition extends Personen {
     public static Marion marion = new Marion();
     public static Besucher besucher = new Besucher();
     public static JambitMonster jambitMonster = new JambitMonster();
+    public static Zain zain = new Zain();
+    public static Max max = new Max();
 
 
     void setPersons() {
@@ -22,6 +24,8 @@ public class PersonPosition extends Personen {
         marion.setMarion();
         besucher.setBesucher();
         jambitMonster.setJambitMonster();
+        zain.setZain();
+        max.setMax();
     }
 
     void setPersonPositionList() {
@@ -32,6 +36,8 @@ public class PersonPosition extends Personen {
         personPositionList.put(marion, marion.position);
         personPositionList.put(besucher, besucher.position);
         personPositionList.put(jambitMonster, jambitMonster.position);
+        personPositionList.put(zain, zain.position);
+        personPositionList.put(max, max.position);
     }
 
     void triggerPerson(String x) {
@@ -70,6 +76,12 @@ public class PersonPosition extends Personen {
                 break;
             case "JambitMonster":
                 jambitMonster.jambitMonsterExecute();
+                break;
+            case "Zain":
+                zain.zainExecute();
+                break;
+            case "Max":
+                max.maxExecute();
                 break;
         }
     }

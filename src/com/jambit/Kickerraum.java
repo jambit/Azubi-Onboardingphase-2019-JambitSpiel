@@ -38,11 +38,13 @@ public class Kickerraum extends Room {
             }
         }
         if (toreplayer == 5){
-            System.out.println("Glückwunsch, du hast gewonnen.");
+            System.out.println("Glückwunsch, du hast gewonnen. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
+            Main.player.intelligenz += 10;
             toreplayer = 0;
             torematch = 0;
         } else {
-            System.out.println("Schade, du hast verloren. Aber beim nächsten Mal läuft es bestimmt besser.");
+            System.out.println("Schade, du hast verloren. Aber beim nächsten Mal läuft es bestimmt besser. Leider hast du Intelligenz verloren. Du hast jetzt " + Main.player.intelligenz + " Intelligenz.");
+            Main.player.intelligenz -= 5;
             toreplayer = 0;
             torematch = 0;
         }

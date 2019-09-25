@@ -28,11 +28,6 @@ public class Main extends Player {
         }
 
 
-
-
-
-
-
         System.out.println("\n" +
                 "     )    )           (     (        (      \n" +
                 "  ( /( ( /(           )\\ )  )\\ )     )\\ )   \n" +
@@ -48,7 +43,7 @@ public class Main extends Player {
 
     static boolean checkLifeConditions(Player player) {
         if (player.gesundheit == 0 || player.hunger >= 100) {
-            System.out.println("Verhungert oder hast kein Leben mehr");
+            System.out.println("Du bist verhungert!!!");
             return false;
         }
         return true;

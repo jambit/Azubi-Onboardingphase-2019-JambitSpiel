@@ -10,29 +10,27 @@ public class PersonPosition extends Personen {
     public static Adalbert adalbert = new Adalbert();
     public static Marion marion = new Marion();
     public static Besucher besucher = new Besucher();
+    public static JambitMonster jambitMonster = new JambitMonster();
 
 
     void setPersons() {
         cherry.setCherry();
-
         alma.setAlma();
-
         finn.setFinn();
-
         adalbert.setAdalbert();
-
         marion.setMarion();
-
         besucher.setBesucher();
-
+        jambitMonster.setJambitMonster();
     }
-    void setPersonPositionList(){
+
+    void setPersonPositionList() {
         personPositionList.put(cherry, cherry.position);
         personPositionList.put(alma, alma.position);
         personPositionList.put(finn, finn.position);
         personPositionList.put(adalbert, adalbert.position);
-        personPositionList.put(marion,marion.position);
-        personPositionList.put(besucher,besucher.position);
+        personPositionList.put(marion, marion.position);
+        personPositionList.put(besucher, besucher.position);
+        personPositionList.put(jambitMonster, jambitMonster.position);
     }
 
     void triggerPerson(String x) {
@@ -54,6 +52,9 @@ public class PersonPosition extends Personen {
                 break;
             case "Besucher":
                 besucher.besucherExecute(besucher);
+                break;
+            case "JambitMonster":
+                jambitMonster.jambitMonsterExecute();
                 break;
         }
     }

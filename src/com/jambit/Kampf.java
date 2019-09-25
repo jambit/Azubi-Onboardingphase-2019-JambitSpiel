@@ -14,6 +14,7 @@ public class Kampf extends Main {
     int waffenstaerke;
     int gegnerSchaden;
     double gegnerWahrscheinlichkeiten;
+    int anzahlKämpfe;
     Main main = new Main();
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
     MusikPlayer musikPlayer = new MusikPlayer();
@@ -24,15 +25,15 @@ public class Kampf extends Main {
     }
 
     void executeFight() {
-        musikPlayer.stop();
+        Main.musikPlayer.stop();
         musikPlayer.starteAbspielen("audio/Scottish Battle Music - Scottish Clan.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
             System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");
             System.out.println("Die Wahrscheinlichkeit eines Treffers:");
-            System.out.println("Leicht: 0,3*Intelligenz/100");
+            System.out.println("Schwer: 0,3*Intelligenz/100");
             System.out.println("Mittel: 0,6*Intelligenz/100");
-            System.out.println("Stärke: 0,8*Intelligenz/100");
+            System.out.println("Leicht: 0,8*Intelligenz/100");
             System.out.println("");
             System.out.println("Schaden:");
             System.out.println("Leicht: 20*Stärke/10 + Waffenstärke*Intelligenz/10");
@@ -63,7 +64,7 @@ public class Kampf extends Main {
 
         }
 
-        spielerGesundheit = main.player.gesundheit;
+        spielerGesundheit = Main.player.gesundheit;
         switch (name) {
             case "Cherry":
                 gegnerGesundheit = 1000;
@@ -74,6 +75,11 @@ public class Kampf extends Main {
                 gegnerGesundheit = 1;
                 gegnerSchaden = 20;
                 gegnerWahrscheinlichkeiten = 0.6;
+                break;
+            case "JambitMonster":
+                gegnerGesundheit = 500 + (anzahlKämpfe * 150);
+                gegnerSchaden = 10 + (anzahlKämpfe * 7);
+                gegnerWahrscheinlichkeiten = 0.5 + (anzahlKämpfe * 0.1);
                 break;
         }
 
@@ -89,7 +95,7 @@ public class Kampf extends Main {
             auswahl = scanner.nextInt();
             switch (auswahl) {
                 case 1:
-                    if (Math.random() <= 0.8) {
+                    if (Math.random() <= 0.8 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= ((20 * Main.player.staerke / 10) + (Main.player.intelligenz / 10 * waffenstaerke));
                         System.out.println("Treffer! Du hast" + 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
@@ -98,7 +104,7 @@ public class Kampf extends Main {
                     }
                     break;
                 case 2:
-                    if (Math.random() <= 0.6) {
+                    if (Math.random() <= 0.6 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
                         System.out.println("Treffer! Du hast" + 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
@@ -107,7 +113,7 @@ public class Kampf extends Main {
                     }
                     break;
                 case 3:
-                    if (Math.random() >= 0.3) {
+                    if (Math.random() <= 0.3 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
                         System.out.println("Treffer! Du hast" + 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
@@ -133,6 +139,9 @@ public class Kampf extends Main {
                 if (Math.random() >= gegnerWahrscheinlichkeiten) {
                     spielerGesundheit -= gegnerSchaden;
                     System.out.println("Der Gegner hat " + gegnerSchaden + " verursacht");
+                    if (spielerGesundheit <= 0){
+sterbenImKampf();
+                    }
                 } else {
                     System.out.println("Gegner hat dich verfehlt!");
                 }
@@ -140,6 +149,8 @@ public class Kampf extends Main {
         }
         Main.player.gesundheit = spielerGesundheit;
         musikPlayer.stop();
+        Main.musikPlayer.starteAbspielen("audio/Scottish Battle Music - William Wallace.mp3");
+        anzahlKämpfe++;
     }
 
     void waffenwaelen(String ausgewählteWaffe) {
@@ -160,5 +171,20 @@ public class Kampf extends Main {
                 waffenstaerke = 30;
                 break;
         }
+    }
+
+    void sterbenImKampf(){
+        musikPlayer.stop();
+        System.out.println("\n" +
+                "     )    )           (     (        (      \n" +
+                "  ( /( ( /(           )\\ )  )\\ )     )\\ )   \n" +
+                "  )\\()))\\())     (   (()/( (()/( (  (()/(   \n" +
+                " ((_)\\((_)\\      )\\   /(_)) /(_)))\\  /(_))  \n" +
+                "__ ((_) ((_)  _ ((_) (_))_ (_)) ((_)(_))_   \n" +
+                "\\ \\ / // _ \\ | | | |  |   \\|_ _|| __||   \\  \n" +
+                " \\ V /| (_) || |_| |  | |) || | | _| | |) | \n" +
+                "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
+                "                                            \n");
+        musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
     }
 }

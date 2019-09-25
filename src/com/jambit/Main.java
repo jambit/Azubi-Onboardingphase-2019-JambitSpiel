@@ -7,13 +7,11 @@ public class Main extends Player {
     public static PersonPosition personPosition = new PersonPosition();
     public static Gegenstand gegenstandListe = new Gegenstand();
     public static boolean kampfinfo = true;
-    public static ThreadForMusic threadForMusic = new ThreadForMusic();
+
 
     public static void main(String[] args) throws Exception {
 
         //player.start();
-
-        threadForMusic.start();
 
         gegenstandListe.setGegenstand();
         personPosition.setPersons();
@@ -27,6 +25,7 @@ public class Main extends Player {
             positionFinder.findPosition(player);
         }
         System.out.println("You Died");
+        musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
     }
 
     static boolean checkLifeConditions(Player player) {

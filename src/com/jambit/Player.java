@@ -32,10 +32,11 @@ public class Player extends PositionFinder {
     int inventoryWeapons = 2;
     int inventoryUsed;
     int inventoryUsedWeapons;
-    public static ThreadForMusic threadForMusic = new ThreadForMusic();
-    public static Musik musik = new Musik();
+
+    public static MusikPlayer musikPlayer = new MusikPlayer();
 
     void start() throws InterruptedException {
+        musikPlayer.starteAbspielen("audio/Pirate Accordion Music - Pirates of the Coast.mp3");
 
         System.out.println("\n" +
                 "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo \n" +
@@ -84,6 +85,7 @@ public class Player extends PositionFinder {
         System.out.println("Hast du Hunger?");
         System.out.println("Nein, erst wenn er 100 erreicht, dann gehst du drauf");
         System.out.println("So, jetzt wünsche ich dir erstmal viel Spaß!!");
+        musikPlayer.stop();
     }
 
     void checkInventory() {

@@ -1,4 +1,5 @@
 package com.jambit;
+
 import java.util.concurrent.TimeUnit;
 
 import java.util.HashMap;
@@ -16,9 +17,9 @@ public class Kampf extends Main {
     int gegnerSchaden;
     double gegnerWahrscheinlichkeiten;
     int anzahlKämpfe;
+    boolean keineFlucht;
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
     MusikPlayer musikPlayer = new MusikPlayer();
-
 
 
     public Kampf(String name) {
@@ -27,6 +28,7 @@ public class Kampf extends Main {
 
     void executeFight() {
         Main.musikPlayer.stop();
+        keineFlucht = true;
         musikPlayer.starteAbspielen("audio/harold-faltermeyer-axel-f-1984-beverly-hills-cop-soundtrack.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
@@ -97,6 +99,7 @@ public class Kampf extends Main {
             System.out.println("[1] Leicht");
             System.out.println("[2] Mittel");
             System.out.println("[3] Schwer");
+            System.out.println("[4] Fliehen");
             auswahl = scanner.nextInt();
             switch (auswahl) {
                 case 1:
@@ -112,7 +115,6 @@ public class Kampf extends Main {
                     if (Math.random() <= 0.6 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
                         System.out.println("Treffer! Du hast" + 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
-
                     } else {
                         System.out.println("Nicht getroffen!!!");
                     }
@@ -126,32 +128,37 @@ public class Kampf extends Main {
                         System.out.println("Nicht getroffen!!!");
                     }
                     break;
-
+                case 4:
+                    keineFlucht = false;
+                    kampfLäuft = false;
+                    break;
             }
-            if (gegnerGesundheit <= 0) {
-                System.out.println("Gegner elimeniert");
-                switch (name) {
-                    case "Cherry":
-                        Main.personPosition.cherry.lebend = false;
-                        break;
-                    case "Alma":
-                        Main.personPosition.alma.lebend = false;
-                        break;
-                    case "Max":
-                        Main.personPosition.max.lebend = false;
-                        break;
-                }
-                System.out.println("Du hast gewonnen!!!");
-                kampfLäuft = false;
-            } else {
-                if (Math.random() >= gegnerWahrscheinlichkeiten) {
-                    spielerGesundheit -= gegnerSchaden;
-                    System.out.println("Der Gegner hat " + gegnerSchaden + " Schaden verursacht");
-                    if (spielerGesundheit <= 0) {
-                        sterbenImKampf();
+            if (keineFlucht == true) {
+                if (gegnerGesundheit <= 0) {
+                    System.out.println("Gegner elimeniert");
+                    switch (name) {
+                        case "Cherry":
+                            Main.personPosition.cherry.lebend = false;
+                            break;
+                        case "Alma":
+                            Main.personPosition.alma.lebend = false;
+                            break;
+                        case "Max":
+                            Main.personPosition.max.lebend = false;
+                            break;
                     }
+                    System.out.println("Du hast gewonnen!!!");
+                    kampfLäuft = false;
                 } else {
-                    System.out.println("Gegner hat dich verfehlt!");
+                    if (Math.random() >= gegnerWahrscheinlichkeiten) {
+                        spielerGesundheit -= gegnerSchaden;
+                        System.out.println("Der Gegner hat " + gegnerSchaden + " Schaden verursacht");
+                        if (spielerGesundheit <= 0) {
+                            sterbenImKampf();
+                        }
+                    } else {
+                        System.out.println("Gegner hat dich verfehlt!");
+                    }
                 }
             }
         }

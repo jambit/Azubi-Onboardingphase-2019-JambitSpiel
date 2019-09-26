@@ -14,6 +14,9 @@ public class PersonPosition extends Personen {
     public static JambitMonster jambitMonster = new JambitMonster();
     public static Zain zain = new Zain();
     public static Max max = new Max();
+    public static Harti harti = new Harti();
+    public static Felli felli = new Felli();
+    public static AudiTyp audiTyp = new AudiTyp();
 
 
     void setPersons() {
@@ -26,6 +29,9 @@ public class PersonPosition extends Personen {
         jambitMonster.setJambitMonster();
         zain.setZain();
         max.setMax();
+        harti.setHarti();
+        felli.setFelli();
+        audiTyp.setAudiTyp();
     }
 
     void setPersonPositionList() {
@@ -38,6 +44,9 @@ public class PersonPosition extends Personen {
         personPositionList.put(jambitMonster, jambitMonster.position);
         personPositionList.put(zain, zain.position);
         personPositionList.put(max, max.position);
+        personPositionList.put(harti, harti.position);
+        personPositionList.put(felli, felli.position);
+        personPositionList.put(audiTyp, audiTyp.position);
     }
 
     void triggerPerson(String x) {
@@ -46,10 +55,8 @@ public class PersonPosition extends Personen {
                 if (cherry.lebend) {
                     cherry.cherryExecute(cherry);
                 } else System.out.println("Sorrry, die Person ist leider Tod...");
-
                 break;
             case "Alma":
-
                 if (alma.lebend) {
                     alma.almaExecute(alma);
                 } else System.out.println("Sorrry, die Person ist leider Tod...");
@@ -82,6 +89,15 @@ public class PersonPosition extends Personen {
                 break;
             case "Max":
                 max.maxExecute();
+                break;
+            case "Harti":
+                harti.hartiExecute();
+                break;
+            case "Felli":
+                felli.felliExecute();
+                break;
+            case "Audi-Typ":
+                audiTyp.audiTypExecute();
                 break;
         }
     }

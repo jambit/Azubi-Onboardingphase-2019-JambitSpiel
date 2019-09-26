@@ -22,12 +22,12 @@ public class Zain extends Personen {
                             break;
                         }
                     case 2:
-                        System.out.println("'Ok, schade.'");
+                        System.out.println("'Dann muss er wohl ohne auskommen.'");
                         break;
                 }
                 break;
             case 2:
-                System.out.println("'Dann muss er wohl ohne auskommen.'");
+                System.out.println("'Ok, schade'");
                 break;
         }
     }

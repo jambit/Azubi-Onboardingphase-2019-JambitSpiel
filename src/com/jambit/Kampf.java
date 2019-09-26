@@ -1,4 +1,5 @@
 package com.jambit;
+import java.util.concurrent.TimeUnit;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -15,9 +16,10 @@ public class Kampf extends Main {
     int gegnerSchaden;
     double gegnerWahrscheinlichkeiten;
     int anzahlKämpfe;
-    Main main = new Main();
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
     MusikPlayer musikPlayer = new MusikPlayer();
+
+
 
     public Kampf(String name) {
         this.name = name;
@@ -58,7 +60,7 @@ public class Kampf extends Main {
             }
             auswahl = scanner.nextInt();
             String ausgewählteWaffe = temporarySave.get(auswahl);
-            waffenwaelen(ausgewählteWaffe);
+            waffenWaelen(ausgewählteWaffe);
             player.weaponsInventory.remove(ausgewählteWaffe);
 
         }
@@ -144,7 +146,7 @@ public class Kampf extends Main {
             } else {
                 if (Math.random() >= gegnerWahrscheinlichkeiten) {
                     spielerGesundheit -= gegnerSchaden;
-                    System.out.println("Der Gegner hat " + gegnerSchaden + " verursacht");
+                    System.out.println("Der Gegner hat " + gegnerSchaden + " Schaden verursacht");
                     if (spielerGesundheit <= 0) {
                         sterbenImKampf();
                     }
@@ -159,7 +161,7 @@ public class Kampf extends Main {
         anzahlKämpfe++;
     }
 
-    void waffenwaelen(String ausgewählteWaffe) {
+    void waffenWaelen(String ausgewählteWaffe) {
         switch (ausgewählteWaffe) {
             case "Laptop":
                 waffenstaerke = 20;
@@ -192,5 +194,21 @@ public class Kampf extends Main {
                 "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
                 "                                            \n");
         musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
+        System.out.println("Drücke eine Taste um neu zu starten");
+
+        while (!scanner.hasNext()) {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        scanner.nextLine();
+        String[] args = new String[0];
+        try {
+            main(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

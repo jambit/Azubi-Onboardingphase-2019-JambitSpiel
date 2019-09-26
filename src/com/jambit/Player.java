@@ -92,6 +92,7 @@ public class Player extends PositionFinder {
     }
 
     void checkInventory() {
+        //todo bug anzahl
         for (String i : inventory.keySet()) {
             inventoryUsed = inventoryUsed + inventory.get(i);
         }
@@ -145,7 +146,6 @@ public class Player extends PositionFinder {
             for (String i : questList.keySet()) {
                 System.out.println(i + "   " + questList.get(i));
             }
-
         }
     }
 

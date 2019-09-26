@@ -12,6 +12,7 @@ public class Room {
     public static String spezial;
     public static String raumName;
     public static int sprechenAuswahl;
+    public static boolean nichtsAufheben;
     HashMap<String, Integer> gegenstaende = new HashMap<String, Integer>();
     HashMap<Integer, String> temporarySave = new HashMap<Integer, String>();
 
@@ -89,6 +90,9 @@ public class Room {
     }
 
     void aufheben(Player player, int position) {
+        player.inventoryUsedWeapons = 0;
+        player.inventoryUsed = 0;
+        nichtsAufheben = false;
         int anzahl = 1;
         for (String i : gegenstaende.keySet()) {
             System.out.println("[" + anzahl + "] " + i);
@@ -108,6 +112,7 @@ public class Room {
         if (Main.gegenstandListe.kathegorie.get(x) == 1) {
             if (player.inventoryUsed == player.inventoryGegenstände) {
                 System.out.println("Kein Platz mehr im Inventar");
+                nichtsAufheben = true;
                 option(player, position);
             } else {
                 if (!player.inventory.containsKey(x)) {
@@ -120,6 +125,7 @@ public class Room {
         } else {
             if (player.inventoryUsedWeapons == player.inventoryWeapons) {
                 System.out.println("Kein Platz mehr für weitere Waffen");
+                nichtsAufheben = true;
                 option(player, position);
             } else {
                 if (!player.weaponsInventory.containsKey(x)) {
@@ -129,11 +135,12 @@ public class Room {
                 }
             }
         }
-
-        if (gegenstaende.get(x) == 1) {
-            gegenstaende.remove(x);
-        } else {
-            gegenstaende.replace(x, gegenstaende.get(x), gegenstaende.get(x) - 1);
+        if (!nichtsAufheben) {
+            if (gegenstaende.get(x) == 1) {
+                gegenstaende.remove(x);
+            } else {
+                gegenstaende.replace(x, gegenstaende.get(x), gegenstaende.get(x) - 1);
+            }
         }
     }
 }

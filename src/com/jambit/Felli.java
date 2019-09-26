@@ -4,7 +4,7 @@ public class Felli extends Personen {
 
     void setFelli() {
         name = "Felli";
-        position = 108;
+        position = 107;
     }
 
     void felliExecute() {

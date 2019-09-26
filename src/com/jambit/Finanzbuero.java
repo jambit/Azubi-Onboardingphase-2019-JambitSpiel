@@ -1,7 +1,7 @@
 package com.jambit;
 
 public class Finanzbuero extends Room {
-    int position = 107;
+    int position = 108;
     boolean matheaufgaben = true;
 
     void execute(Player player) {
@@ -14,7 +14,7 @@ public class Finanzbuero extends Room {
                 execute(player);
                 break;
             case 4:
-                player.position = 5;
+                player.position = 8;
                 break;
         }
     }

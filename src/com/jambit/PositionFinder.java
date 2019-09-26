@@ -45,10 +45,10 @@ public class PositionFinder extends PersonPosition {
                 kalimantan.execute(player);
                 break;
             case 107:
-                finanzbuero.execute(player);
+                chefBuero.execute(player);
                 break;
             case 108:
-                chefBuero.execute(player);
+                finanzbuero.execute(player);
                 break;
             case 201:
                 helpdesk.execute(player);

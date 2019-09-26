@@ -1,7 +1,7 @@
 package com.jambit;
 
 public class ChefBuero extends Room {
-    int position = 108;
+    int position = 107;
 
     void execute(Player player) {
         raumName = "Chef-Büro";
@@ -11,6 +11,7 @@ public class ChefBuero extends Room {
             case 3:
                 break;
             case 4:
+                player.position = 7;
                 break;
         }
     }

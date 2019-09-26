@@ -4,7 +4,7 @@ public class AudiTyp extends Personen {
 
     void setAudiTyp() {
         name = "Audi-Typ";
-        position = 108;
+        position = 107;
     }
 
     void audiTypExecute() {

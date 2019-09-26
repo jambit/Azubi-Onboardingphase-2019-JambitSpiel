@@ -4,7 +4,7 @@ public class Marion extends Personen {
     void setMarion() {
         name = "Marion";
         gesundheit = 20;
-        position = 107;
+        position = 108;
     }
 
     void marionExecute() {

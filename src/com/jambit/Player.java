@@ -45,16 +45,54 @@ public class Player extends PositionFinder {
         musikPlayer.starteAbspielen("audio/GoNotGentlyRedux.mp3");
 
         System.out.println("\n" +
-                "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo \n" +
-                "   `888      .888.      `88.       .888' `888'   `Y8b `888' 8'   888   `8 \n" +
-                "    888     .8\"888.      888b     d'888   888     888  888       888      \n" +
-                "    888    .8' `888.     8 Y88. .P  888   888oooo888'  888       888      \n" +
-                "    888   .88ooo8888.    8  `888'   888   888    `88b  888       888      \n" +
-                "    888  .8'     `888.   8    Y     888   888    .88P  888       888      \n" +
-                ".o. 88P o88o     o8888o o8o        o888o o888bood8P'  o888o     o888o     \n" +
-                "`Y888P                                                                    \n" +
-                "                                                                          \n" +
-                "                                                                          \n");
+                "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "   `888      .888.      `88.       .888' `888'   `Y8b `888' 8'   888   `8 ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "    888     .8\"888.      888b     d'888   888     888  888       888      ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "    888    .8' `888.     8 Y88. .P  888   888oooo888'  888       888      ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "    888   .88ooo8888.    8  `888'   888   888    `88b  888       888      ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "    888  .8'     `888.   8    Y     888   888    .88P  888       888      ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                ".o. 88P o88o     o8888o o8o        o888o o888bood8P'  o888o     o888o     ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println(
+                "`Y888P                                                                    ");
+        try {
+            Thread.sleep(880);
+        } catch (InterruptedException e) {
+        }
+        System.out.println("");
         System.out.println("Drücke eine Taste um fortzufahren");
         while (!scanner.hasNext()) {
             TimeUnit.SECONDS.sleep(1);
@@ -68,11 +106,11 @@ public class Player extends PositionFinder {
         checkDAUint();
         int x = scanner.nextInt();
         if (x <= 40) {
-            intelligenz = 20;
+            intelligenz = 30;
             staerke = 40;
         } else {
             intelligenz = 40;
-            staerke = 20;
+            staerke = 30;
         }
         System.out.println("Bist du im Kick-it like jambit?");
         System.out.println("ja/nein");

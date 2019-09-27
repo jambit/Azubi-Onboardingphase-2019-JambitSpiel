@@ -20,25 +20,13 @@ public class MusikPlayer {
     }
 
 
-    public void dateiAnspielen(String dateiname) {
-        try {
-            playerVorbereiten(dateiname);
-            player.play(500);
-        } catch (JavaLayerException e) {
-            meldeProblem(dateiname);
-        } finally {
-            killPlayer();
-        }
-    }
-
-
     public void starteAbspielen(final String dateiname) {
         try {
             playerVorbereiten(dateiname);
             Thread playerThread = new Thread() {
                 public void run() {
                     try {
-                        player.play(50000);
+                        player.play(5317);
                     } catch (JavaLayerException e) {
                         meldeProblem(dateiname);
                     } finally {
@@ -69,7 +57,6 @@ public class MusikPlayer {
             killPlayer();
         }
     }
-
 
     private InputStream gibEingabestream(String dateiname)
             throws IOException {

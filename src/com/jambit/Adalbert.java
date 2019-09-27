@@ -36,6 +36,9 @@ public class Adalbert extends Personen {
                 System.out.println("'Was störst du mich dann?'");
                 break;
         }
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 }

@@ -32,5 +32,10 @@ public class Besucher extends Personen {
                 Main.player.intelligenz -= 50;
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+        Main.player.position = 300;
     }
 }

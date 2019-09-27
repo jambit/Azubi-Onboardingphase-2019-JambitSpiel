@@ -38,5 +38,9 @@ public class Max extends Personen{
                     break;
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 }

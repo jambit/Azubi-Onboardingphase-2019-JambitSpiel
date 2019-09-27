@@ -88,8 +88,16 @@ public class Player extends PositionFinder {
             staerke -= 20;
             System.out.println("Ja dann halt nicht...");
         }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+        }
         System.out.println("Hast du Hunger?");
         System.out.println("Nein, erst wenn er 100 erreicht, dann gehst du drauf");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         System.out.println("So, jetzt wünsche ich dir erstmal viel Spaß!!");
         musikPlayer.stop();
     }

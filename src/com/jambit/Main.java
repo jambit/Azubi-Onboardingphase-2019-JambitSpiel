@@ -8,9 +8,7 @@ public class Main extends Player {
     public static Gegenstand gegenstandListe = new Gegenstand();
     public static boolean kampfinfo = true;
 
-
     public static void main(String[] args) throws Exception {
-
         player.start();
 
         gegenstandListe.setGegenstand();
@@ -38,6 +36,7 @@ public class Main extends Player {
                 "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
                 "                                            \n");
         musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
+
     }
 
     static boolean checkLifeConditions(Player player) {

@@ -57,5 +57,9 @@ public class Felli extends Personen {
                     break;
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 }

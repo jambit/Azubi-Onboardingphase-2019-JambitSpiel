@@ -39,5 +39,9 @@ public class Marion extends Personen {
                 System.out.println("'Oh, dass ist aber nett von dir. Jetzt muss ich aber leider weiter arbeiten.'");
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 }

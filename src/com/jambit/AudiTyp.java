@@ -53,6 +53,10 @@ public class AudiTyp extends Personen {
                 System.out.println("A-T: Ja ist besser.");
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         Main.audiTyp.position = 300;
     }
 }

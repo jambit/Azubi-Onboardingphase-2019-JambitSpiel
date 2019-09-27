@@ -27,6 +27,10 @@ public class Cherry extends Personen {
                         break;
                 }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         cherry.position = 105;
         Main.personPosition.setPersonPositionList();
     }

@@ -15,6 +15,10 @@ public class Finn extends Personen {
             } catch (InterruptedException e) {
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         finn.position = 101;
     }
 }

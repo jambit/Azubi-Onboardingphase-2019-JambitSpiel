@@ -42,6 +42,10 @@ public class Alma extends Personen {
                 System.out.println("'Wenn du nichts anderes zu tun hast, dann geh doch kickern.'");
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         alma.position = 104;
         Main.personPosition.setPersonPositionList();
     }

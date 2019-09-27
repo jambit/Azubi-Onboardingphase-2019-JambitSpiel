@@ -25,7 +25,6 @@ public class Player extends PositionFinder {
     String name;
     double staerke;
     int position;
-    //TODO Wichtig auf False setzen
 
     boolean badge = false;
     boolean badge2 = false;
@@ -106,21 +105,21 @@ public class Player extends PositionFinder {
         checkDAUint();
         int x = scanner.nextInt();
         if (x <= 40) {
-            intelligenz = 30;
-            staerke = 40;
-        } else {
             intelligenz = 40;
-            staerke = 30;
+            staerke = 50;
+        } else {
+            intelligenz = 50;
+            staerke = 40;
         }
         System.out.println("Bist du im Kick-it like jambit?");
         System.out.println("ja/nein");
         zwischenSpeicher = scanner.next();
         System.out.println("ok");
         if (zwischenSpeicher.equals("ja")) {
-            intelligenz -= 7;
-            staerke += 12;
+            intelligenz -= 5;
+            staerke += 17;
         } else if (zwischenSpeicher.equals("nein")) {
-            intelligenz += 5;
+            intelligenz += 10;
         } else {
             intelligenz -= 20;
             staerke -= 20;
@@ -141,6 +140,8 @@ public class Player extends PositionFinder {
     }
 
     void checkInventory() {
+        inventoryUsed = 0;
+        inventoryUsedWeapons = 0;
         for (String i : inventory.keySet()) {
             inventoryUsed = inventoryUsed + inventory.get(i);
         }

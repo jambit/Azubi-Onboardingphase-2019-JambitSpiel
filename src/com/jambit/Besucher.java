@@ -10,11 +10,11 @@ public class Besucher extends Personen {
     void besucherExecute(Besucher besucher) {
         System.out.println("Du stellst fest, dass der Besucher kein Badge hat. Was machst du?");
         int i = antworten2("ihn darauf ansprechen", "es ignorieren");
-        switch (i){
+        switch (i) {
             case 1:
                 System.out.println("Der Besucher kann immer noch kein Badge vorweisen und du möchtest ihn zum Empfang begleiten, doch er weigert sich. Was tust du?");
                 int j = antworten2("mit ihm kämpfen", "ihn in Ruhe lassen");
-                switch (j){
+                switch (j) {
                     case 1:
                         Kampf kampf = new Kampf(name);
                         kampf.executeFight();

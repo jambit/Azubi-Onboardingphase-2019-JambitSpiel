@@ -47,13 +47,6 @@ public class Room {
     }
 
     void umschauen(Player player, int position) {
-        if (gegenstaende.isEmpty()) {
-            System.out.println("Nichts mehr hier");
-        } else {
-            for (String i : gegenstaende.keySet()) {
-                System.out.println(i + "   Anzahl:" + gegenstaende.get(i));
-            }
-        }
         if (personPosition.personPositionList.containsValue(position)) {
             for (Personen i : personPosition.personPositionList.keySet()) {
                 if (i.position == position) {
@@ -61,12 +54,20 @@ public class Room {
                 }
             }
         }
-        System.out.println("[1] Aufheben?");
-        System.out.println("[2] Nichts machen");
-        auswahl = scanner.nextInt();
-        if (auswahl == 1) {
-            aufheben(player, position);
+        if (gegenstaende.isEmpty()) {
+            System.out.println("Nichts mehr hier");
+        } else {
+            for (String i : gegenstaende.keySet()) {
+                System.out.println(i + "   Anzahl:" + gegenstaende.get(i));
+            }
+            System.out.println("[1] Aufheben?");
+            System.out.println("[2] Nichts machen");
+            auswahl = scanner.nextInt();
+            if (auswahl == 1) {
+                aufheben(player, position);
+            }
         }
+
 
         option(player, position);
     }

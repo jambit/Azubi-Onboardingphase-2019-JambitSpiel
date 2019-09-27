@@ -218,6 +218,7 @@ public class Kampf extends Main {
         }
         scanner.nextLine();
         String[] args = new String[0];
+        musikPlayer.stop();
         try {
             main(args);
         } catch (Exception e) {

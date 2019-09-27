@@ -16,7 +16,7 @@ public class TABuero extends Room {
                         Thread.sleep(10000);
                     }catch(InterruptedException e){}
                     System.out.println("Du hast dich erholt und bekommst dadurch eine bessere Gesundheit.");
-                    player.gesundheit += 7;
+                    player.gesundheit += 30;
                     urlaub1 = true;
                 } else {
                     if (urlaub2 == false){

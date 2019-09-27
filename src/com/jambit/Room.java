@@ -35,10 +35,18 @@ public class Room {
                 break;
             case 5:
                 player.checkInventory();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                }
                 option(player, position);
                 break;
             case 6:
                 player.getStats();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                }
                 option(player, position);
                 break;
             default:

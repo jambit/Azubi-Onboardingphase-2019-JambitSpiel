@@ -94,6 +94,13 @@ public class Kampf extends Main {
                 gegnerGesundheit = 3000;
                 gegnerSchaden = 20;
                 gegnerWahrscheinlichkeiten = 0.7;
+                break;
+            case "Besucher":
+                gegnerGesundheit = 1000;
+                gegnerSchaden = 20;
+                gegnerWahrscheinlichkeiten = 0.5;
+                break;
+
         }
 
         while (kampfLäuft == true) {

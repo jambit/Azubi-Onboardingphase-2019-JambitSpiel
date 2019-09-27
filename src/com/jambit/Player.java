@@ -25,6 +25,7 @@ public class Player extends PositionFinder {
     String name;
     double staerke;
     int position;
+    int schwierigkeitsgrad;
 
     boolean badge = false;
     boolean badge2 = false;
@@ -43,60 +44,37 @@ public class Player extends PositionFinder {
     void start() throws InterruptedException {
         musikPlayer.starteAbspielen("audio/GoNotGentlyRedux.mp3");
 
-        System.out.println("\n" +
-                "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "   `888      .888.      `88.       .888' `888'   `Y8b `888' 8'   888   `8 ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "    888     .8\"888.      888b     d'888   888     888  888       888      ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "    888    .8' `888.     8 Y88. .P  888   888oooo888'  888       888      ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "    888   .88ooo8888.    8  `888'   888   888    `88b  888       888      ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "    888  .8'     `888.   8    Y     888   888    .88P  888       888      ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                ".o. 88P o88o     o8888o o8o        o888o o888bood8P'  o888o     o888o     ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
-        System.out.println(
-                "`Y888P                                                                    ");
-        try {
-            Thread.sleep(880);
-        } catch (InterruptedException e) {
-        }
+        System.out.println("   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo");
+        Thread.sleep(880);
+        System.out.println("   `888      .888.      `88.       .888' `888'   `Y8b `888' 8'   888   `8 ");
+        Thread.sleep(880);
+        System.out.println("    888     .8\"888.      888b     d'888   888     888  888       888      ");
+        Thread.sleep(880);
+        System.out.println("    888    .8' `888.     8 Y88. .P  888   888oooo888'  888       888      ");
+        Thread.sleep(880);
+        System.out.println("    888   .88ooo8888.    8  `888'   888   888    `88b  888       888      ");
+        Thread.sleep(880);
+        System.out.println("    888  .8'     `888.   8    Y     888   888    .88P  888       888      ");
+        Thread.sleep(880);
+        System.out.println(".o. 88P o88o     o8888o o8o        o888o o888bood8P'  o888o     o888o     ");
+        Thread.sleep(880);
+        System.out.println("`Y888P                                                                    ");
+        Thread.sleep(880);
         System.out.println("");
         System.out.println("Drücke eine Taste um fortzufahren");
+
         while (!scanner.hasNext()) {
             TimeUnit.SECONDS.sleep(1);
         }
         scanner.nextLine();
+
+        System.out.println("Wähle einen Schwierigkeitsgrad:");
+        System.out.println("[1] Baby (realistischer, vertretbarer Spielspaß)");
+        System.out.println("[2] Mittel (so wurde das Spiel getestet, danach haben wir einen leichteren Modus erschaffen");
+        System.out.println("[3] Schwer (Für Leute, welche Darksouls etwa 20 mal durchgespielt haben...)");
+        System.out.println("[4] Todesmut (wird schwer. sehr schwer. villeicht unmöglich)");
+        schwierigkeitsgrad = scanner.nextInt();
+
 
         System.out.println("Hallo Fremder, wilkommen bei Jambit!");
         System.out.println("Wie ist dein Name?");
@@ -136,6 +114,25 @@ public class Player extends PositionFinder {
         } catch (InterruptedException e) {
         }
         System.out.println("So, jetzt wünsche ich dir erstmal viel Spaß!!");
+
+        switch (schwierigkeitsgrad){
+            case 1:
+                intelligenz = intelligenz * 1.5;
+                staerke = staerke * 1.5;
+                break;
+            case 2:
+
+                break;
+            case 3:
+                intelligenz = intelligenz * 0.75;
+                staerke = staerke * 0.75;
+                break;
+            case 4:
+                intelligenz = intelligenz * 0.5;
+                staerke = staerke * 0.5;
+                break;
+        }
+
         musikPlayer.stop();
     }
 

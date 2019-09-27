@@ -87,5 +87,9 @@ public class Helpdesk extends Room {
                 System.out.println("OK");
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 }

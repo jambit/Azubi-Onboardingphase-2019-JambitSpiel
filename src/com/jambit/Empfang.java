@@ -61,6 +61,10 @@ public class Empfang extends Room {
                 player.position = 1;
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 
     void setEmpfang() {

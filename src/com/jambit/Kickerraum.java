@@ -49,6 +49,10 @@ public class Kickerraum extends Room {
             toreplayer = 0;
             torematch = 0;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 
     void setKickerraum() {

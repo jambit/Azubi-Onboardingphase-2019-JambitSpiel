@@ -52,5 +52,6 @@ public class Kickerraum extends Room {
     }
 
     void setKickerraum() {
+        gegenstaende.put("Laptop",1);
     }
 }

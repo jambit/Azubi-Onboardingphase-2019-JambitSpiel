@@ -53,7 +53,7 @@ public class Sumatra extends Room {
                 if (scanner.nextInt() != 1) {
                     System.out.println("Das ist flasch! Probier es nocheinmal.");
                 } else {
-                    player.intelligenz += 5;
+                    player.intelligenz += 30;
                     System.out.println("Glückwunsch! Du bist schlauer geworden.");
                     quiz = false;
                 }

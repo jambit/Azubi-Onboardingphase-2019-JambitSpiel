@@ -31,7 +31,8 @@ public class Marion extends Personen {
                 } else{
                     System.out.println("'Ach du hast mir eine Mitgebracht. Vielen Dank.'");
                     Main.player.maus = false;
-                    Main.player.intelligenz += 10;
+                    Main.player.intelligenz += 15;
+                    Main.player.staerke += 8;
                     System.out.println("Du hast Marion sehr geholfen. Dadurch ist deine Intelligenz auf " + Main.player.intelligenz + " gestiegen.");
                 }
                 break;

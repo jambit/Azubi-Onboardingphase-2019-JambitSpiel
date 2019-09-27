@@ -53,7 +53,7 @@ public class Finanzbuero extends Room {
                     if (scanner.nextInt() != 3) {
                         System.out.println("Rechne nochmal nach.");
                     } else {
-                        player.intelligenz += 5;
+                        player.intelligenz += 19;
                         System.out.println("Glückwunsch! Du bist schlauer geworden.");
                         matheaufgaben = false;
                     }

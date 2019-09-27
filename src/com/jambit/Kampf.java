@@ -32,17 +32,23 @@ public class Kampf extends Main {
         musikPlayer.starteAbspielen("audio/EnergyBed2.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
+            System.out.println("");
             System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");
             System.out.println("Die Wahrscheinlichkeit eines Treffers:");
-            System.out.println("Schwer: 0,3*Intelligenz/100");
-            System.out.println("Mittel: 0,6*Intelligenz/100");
             System.out.println("Leicht: 0,8*Intelligenz/100");
+            System.out.println("Mittel: 0,6*Intelligenz/100");
+            System.out.println("Schwer: 0,3*Intelligenz/100");
             System.out.println("");
             System.out.println("Schaden:");
             System.out.println("Leicht: 20*Stärke/10 + Waffenstärke*Intelligenz/10");
             System.out.println("Mittel: 50*Stärke/10 + Waffenstärke*Intelligenz/10");
             System.out.println("Schwer: 80*Stärke/10 + Waffenstärke*Intelligenz/10");
             System.out.println("Dein Gegner hat eine ihm zutreffende Trefferwahrscheinlichkeit und Schaden");
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+            }
 
             Main.kampfinfo = false;
         }
@@ -70,22 +76,22 @@ public class Kampf extends Main {
         spielerGesundheit = Main.player.gesundheit;
         switch (name) {
             case "Cherry":
-                gegnerGesundheit = 1000;
-                gegnerSchaden = 20;
+                gegnerGesundheit = 3000;
+                gegnerSchaden = 40;
                 gegnerWahrscheinlichkeiten = 0.8;
                 break;
             case "Alma":
-                gegnerGesundheit = 1;
+                gegnerGesundheit = 1000;
                 gegnerSchaden = 20;
                 gegnerWahrscheinlichkeiten = 0.6;
                 break;
             case "JambitMonster":
-                gegnerGesundheit = 500 + (anzahlKämpfe * 150);
+                gegnerGesundheit = 1000 + (anzahlKämpfe * 400);
                 gegnerSchaden = 10 + (anzahlKämpfe * 7);
                 gegnerWahrscheinlichkeiten = 0.5 + (anzahlKämpfe * 0.1);
                 break;
             case "Max":
-                gegnerGesundheit = 800;
+                gegnerGesundheit = 3000;
                 gegnerSchaden = 20;
                 gegnerWahrscheinlichkeiten = 0.7;
         }
@@ -180,7 +186,7 @@ public class Kampf extends Main {
                 waffenstaerke = 7;
                 break;
             case "Ladekabel":
-                waffenstaerke = 2;
+                waffenstaerke = 7;
                 break;
             case "Feuerlöscher":
                 waffenstaerke = 30;

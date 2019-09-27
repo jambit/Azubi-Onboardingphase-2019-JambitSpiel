@@ -20,8 +20,8 @@ public class JambitMonster extends Personen {
                 case 1:
                     Kampf kampf = new Kampf("JambitMonster");
                     kampf.executeFight();
-                    Main.player.intelligenz += 7;
-                    Main.player.staerke += 12;
+                    Main.player.intelligenz += 12 ;
+                    Main.player.staerke += 20;
                     position++;
                     break;
                 case 2:
@@ -30,8 +30,8 @@ public class JambitMonster extends Personen {
                     Kampf kampf1 = new Kampf(name);
                     kampf1.executeFight();
                     System.out.println("Upgrade Statuswerte");
-                    Main.player.intelligenz += 5;
-                    Main.player.staerke += 10;
+                    Main.player.intelligenz += 9;
+                    Main.player.staerke += 20;
                     position++;
             }
         } else if (anzahlBegegnungen == 1) {
@@ -45,8 +45,8 @@ public class JambitMonster extends Personen {
                         case 1:
                             Kampf kampf = new Kampf(name);
                             kampf.executeFight();
-                            Main.player.intelligenz += 5;
-                            Main.player.staerke += 10;
+                            Main.player.intelligenz += 10;
+                            Main.player.staerke += 15;
                             position++;
                             break;
                         case 2:
@@ -61,8 +61,8 @@ public class JambitMonster extends Personen {
                 case 1:
                     Kampf kampf = new Kampf(name);
                     kampf.executeFight();
-                    Main.player.intelligenz += 5;
-                    Main.player.staerke += 10;
+                    Main.player.intelligenz += 10;
+                    Main.player.staerke += 20;
                     position++;
                     break;
                 case 2:

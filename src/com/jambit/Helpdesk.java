@@ -56,7 +56,7 @@ public class Helpdesk extends Room {
                                         if (player.inventory.containsKey("Laptop")) {
                                             System.out.println("Hier, ein Ladekabel und noch ein Ersatzkabel");
                                             System.out.println("Du bist schlauer geworden");
-                                            player.intelligenz += 10;
+                                            player.intelligenz += 18;
                                             player.inventory.put("Ladekabel", 2);
                                         } else {
                                             System.out.println("Du hast keinen Laptop in deinem Inventar, hol dir einen.");

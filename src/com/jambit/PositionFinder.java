@@ -22,6 +22,7 @@ public class PositionFinder extends PersonPosition {
         kickerraum.setKickerraum();
         finanzbuero.setFinanzbuero();
         chefBuero.setChefBuero();
+        kalimantan.setKalimantan();
     }
 
     void findPosition(Player player) {

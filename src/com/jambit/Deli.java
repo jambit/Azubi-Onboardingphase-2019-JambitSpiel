@@ -28,7 +28,7 @@ public class Deli extends Room {
                     int antwort2 = raetsel.nextInt();
                     if (antwort1 == 7 && antwort2 == 5) {
                         System.out.println("Glückwunsch! Du bist intelligenter geworden.");
-                        player.intelligenz += 5;
+                        player.intelligenz += 25;
                         ratsel = true;
                     } else {
                         System.out.println("Viel Glück beim nächsten Mal.");

@@ -18,7 +18,7 @@ public class Main extends Player {
         player.position = 1;
         musikPlayer.starteAbspielen("audio/Soulstone.mp3");
         while (checkLifeConditions(player)) {
-            player.hunger += 0;
+            player.hunger += 7;
             if (player.position < 100) {
                 move.moveScreen(player);
             }

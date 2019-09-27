@@ -22,8 +22,8 @@ public class Empfang extends Room {
                     System.out.println("[2] ... ein Mitarbeiter?");
                     int abfragea = abfrage.nextInt();
                     if (abfragea == 2) {
-                        player.intelligenz += 2;
-                        player.staerke += 2;
+                        player.intelligenz += 7;
+                        player.staerke += 7;
                         System.out.println("Du wurdest stärker und intelligenter. Allerdings bekommst du trotzdem nur ein Besucherbadge, da du deine Schlüsselkarte verloren hast.");
                     }
                     System.out.println("Hast du denn schon die Security Policy gelesen?");

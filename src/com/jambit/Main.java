@@ -35,6 +35,7 @@ public class Main extends Player {
                 " \\ V /| (_) || |_| |  | |) || | | _| | |) | \n" +
                 "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
                 "                                            \n");
+        musikPlayer.starteAbspielen("audio/");
         musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
 
     }

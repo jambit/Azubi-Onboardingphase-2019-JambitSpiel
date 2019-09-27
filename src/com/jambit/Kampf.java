@@ -111,7 +111,7 @@ public class Kampf extends Main {
                 case 1:
                     if (Math.random() <= 0.8 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= ((20 * Main.player.staerke / 10) + (Main.player.intelligenz / 10 * waffenstaerke));
-                        System.out.println("Treffer! Du hast" + 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
+                        System.out.println("Treffer! Du hast " + 20 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
                     } else {
                         System.out.println("Nicht getroffen!!!");
@@ -120,7 +120,7 @@ public class Kampf extends Main {
                 case 2:
                     if (Math.random() <= 0.6 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
-                        System.out.println("Treffer! Du hast" + 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
+                        System.out.println("Treffer! Du hast " + 50 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
                     } else {
                         System.out.println("Nicht getroffen!!!");
                     }
@@ -128,7 +128,7 @@ public class Kampf extends Main {
                 case 3:
                     if (Math.random() <= 0.3 * Main.player.intelligenz / 100) {
                         gegnerGesundheit -= 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke;
-                        System.out.println("Treffer! Du hast" + 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
+                        System.out.println("Treffer! Du hast " + 80 * Main.player.staerke / 10 + Main.player.intelligenz / 10 * waffenstaerke + " Schaden verursacht");
 
                     } else {
                         System.out.println("Nicht getroffen!!!");

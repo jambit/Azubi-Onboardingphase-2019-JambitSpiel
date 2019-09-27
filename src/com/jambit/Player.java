@@ -41,7 +41,7 @@ public class Player extends PositionFinder {
     public static MusikPlayer musikPlayer = new MusikPlayer();
 
     void start() throws InterruptedException {
-        musikPlayer.starteAbspielen("audio/Pirate Accordion Music - Pirates of the Coast.mp3");
+        musikPlayer.starteAbspielen("audio/GoNotGentlyRedux.mp3");
 
         System.out.println("\n" +
                 "   oooo       .o.       ooo        ooooo oooooooooo.  ooooo ooooooooooooo \n" +

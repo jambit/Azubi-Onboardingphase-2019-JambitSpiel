@@ -4,80 +4,67 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.IOException;
+
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.AudioDevice;
 import javazoom.jl.player.FactoryRegistry;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 
-public class MusikPlayer
-{
+public class MusikPlayer {
 
     private AdvancedPlayer player;
 
-    public MusikPlayer()
-    {
+    public MusikPlayer() {
         player = null;
     }
 
 
-    public void dateiAnspielen(String dateiname)
-    {
+    public void dateiAnspielen(String dateiname) {
         try {
             playerVorbereiten(dateiname);
             player.play(500);
-        }
-        catch(JavaLayerException e) {
+        } catch (JavaLayerException e) {
             meldeProblem(dateiname);
-        }
-        finally {
+        } finally {
             killPlayer();
         }
     }
 
 
-    public void starteAbspielen(final String dateiname)
-    {
+    public void starteAbspielen(final String dateiname) {
         try {
             playerVorbereiten(dateiname);
             Thread playerThread = new Thread() {
-                public void run()
-                {
+                public void run() {
                     try {
                         player.play(5000);
-                    }
-                    catch(JavaLayerException e) {
+                    } catch (JavaLayerException e) {
                         meldeProblem(dateiname);
-                    }
-                    finally {
+                    } finally {
                         killPlayer();
                     }
                 }
             };
             playerThread.start();
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             meldeProblem(dateiname);
         }
     }
 
-    public void stop()
-    {
+    public void stop() {
         killPlayer();
     }
 
 
-    private void playerVorbereiten(String dateiname)
-    {
+    private void playerVorbereiten(String dateiname) {
         try {
             InputStream is = gibEingabestream(dateiname);
             player = new AdvancedPlayer(is, erzeugeAudiogeraet());
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             meldeProblem(dateiname);
             killPlayer();
-        }
-        catch(JavaLayerException e) {
+        } catch (JavaLayerException e) {
             meldeProblem(dateiname);
             killPlayer();
         }
@@ -85,24 +72,21 @@ public class MusikPlayer
 
 
     private InputStream gibEingabestream(String dateiname)
-            throws IOException
-    {
+            throws IOException {
         return new BufferedInputStream(
                 new FileInputStream(dateiname));
     }
 
 
     private AudioDevice erzeugeAudiogeraet()
-            throws JavaLayerException
-    {
+            throws JavaLayerException {
         return FactoryRegistry.systemRegistry().createAudioDevice();
     }
 
 
-    private void killPlayer()
-    {
-        synchronized(this) {
-            if(player != null) {
+    private void killPlayer() {
+        synchronized (this) {
+            if (player != null) {
                 player.stop();
                 player = null;
             }
@@ -110,8 +94,7 @@ public class MusikPlayer
     }
 
 
-    private void meldeProblem(String dateiname)
-    {
+    private void meldeProblem(String dateiname) {
         System.out.println("Es gab ein Problem beim Abspielen von: " + dateiname);
     }
 

@@ -18,7 +18,7 @@ public class Main extends Player {
         personPosition.setPersonPositionList();
         positionFinder.setRoom();
         player.position = 1;
-        musikPlayer.starteAbspielen("audio/Scottish Battle Music - William Wallace.mp3");
+        musikPlayer.starteAbspielen("audio/Soulstone.mp3");
         while (checkLifeConditions(player)) {
             player.hunger += 0;
             if (player.position < 100) {

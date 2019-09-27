@@ -29,7 +29,7 @@ public class Kampf extends Main {
     void executeFight() {
         Main.musikPlayer.stop();
         keineFlucht = true;
-        musikPlayer.starteAbspielen("audio/harold-faltermeyer-axel-f-1984-beverly-hills-cop-soundtrack.mp3");
+        musikPlayer.starteAbspielen("audio/EnergyBed2.mp3");
         if (Main.kampfinfo) {
             System.out.println("KAMPFINFO");
             System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");
@@ -164,7 +164,7 @@ public class Kampf extends Main {
         }
         Main.player.gesundheit = spielerGesundheit;
         musikPlayer.stop();
-        Main.musikPlayer.starteAbspielen("audio/Scottish Battle Music - William Wallace.mp3");
+        Main.musikPlayer.starteAbspielen("audio/Soulstone.mp3");
         anzahlKämpfe++;
     }
 
@@ -200,7 +200,7 @@ public class Kampf extends Main {
                 " \\ V /| (_) || |_| |  | |) || | | _| | |) | \n" +
                 "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
                 "                                            \n");
-        musikPlayer.starteAbspielen("audio/Always Look on the Bright Side of Life.mp3");
+        musikPlayer.starteAbspielen("audio/");
         System.out.println("Drücke eine Taste um neu zu starten");
 
         while (!scanner.hasNext()) {

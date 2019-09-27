@@ -36,14 +36,24 @@ public class Felli extends Personen {
                     break;
             }
         } else if (Main.player.zwischenSpeicher.equals("ja")) {
-            System.out.println("'Hi, und? Wie gefäällt es dir bei Kick-it like jambit'");
+            System.out.println("'Hi, und? Wie gefällt es dir bei Kick-it like jambit'");
             int k = antworten2("Total gut.", "Gut, es macht echt Spaß.");
             switch (k) {
                 case 1:
                     System.out.println("'Das freut mich. Dann sehen wir uns am Freitag?'");
                     break;
                 case 2:
-                    System.out.println("'Super, dass freut mich. '");
+                    System.out.println("'Super, dass freut mich. Dann sehen wir uns Freitag?'");
+                    break;
+
+            }
+            int l = antworten2("Natürlich.", "Nein, diesen Freitag hab ich leider keine Zeit.");
+            switch (l){
+                case 1:
+                    System.out.println("Dann bis Freitag.");
+                    break;
+                case 2:
+                    System.out.println("Ok, schade. Dann bis nächsten Freitag.");
                     break;
             }
         }

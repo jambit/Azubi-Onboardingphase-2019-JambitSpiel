@@ -24,6 +24,8 @@ public class Cherry extends Personen {
                     case 2:
                         Kampf kampf = new Kampf(name);
                         kampf.executeFight();
+                        System.out.println("Du hast einen Rucksack von Cherry bekommen");
+                        Main.player.inventory.put("Rucksack", 1);
                         break;
                 }
         }

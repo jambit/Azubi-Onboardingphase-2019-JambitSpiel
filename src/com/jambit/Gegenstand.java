@@ -50,6 +50,10 @@ public class Gegenstand extends Personen {
                 player.intelligenz -= 1;
                 player.gesundheit -= 5;
                 break;
+            case "Rucksack":
+                player.inventoryWeapons += 1;
+                player.inventoryGegenstände += 4;
+                break;
 
         }
     }

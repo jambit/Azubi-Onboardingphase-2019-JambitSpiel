@@ -67,5 +67,6 @@ public class Finanzbuero extends Room {
     }
     void setFinanzbuero() {
         gegenstaende.put("Kaffee", 1);
+        gegenstaende.put("Rucksack", 1);
     }
 }

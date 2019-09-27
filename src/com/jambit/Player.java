@@ -75,12 +75,13 @@ public class Player extends PositionFinder {
         System.out.println("[4] Todesmut (wird schwer. sehr schwer. villeicht unmöglich)");
         schwierigkeitsgrad = scanner.nextInt();
 
+        scanner.nextLine();
 
         System.out.println("Hallo Fremder, wilkommen bei Jambit!");
         System.out.println("Wie ist dein Name?");
         name = scanner.nextLine();
         System.out.println("Oh, du siehst jung aus, wie alt bist du?");
-        checkDAUint();
+
         int x = scanner.nextInt();
         if (x <= 40) {
             intelligenz = 40;
@@ -115,7 +116,7 @@ public class Player extends PositionFinder {
         }
         System.out.println("So, jetzt wünsche ich dir erstmal viel Spaß!!");
 
-        switch (schwierigkeitsgrad){
+        switch (schwierigkeitsgrad) {
             case 1:
                 intelligenz = intelligenz * 1.5;
                 staerke = staerke * 1.5;
@@ -147,16 +148,20 @@ public class Player extends PositionFinder {
         }
 
         System.out.println("Inventar hat noch " + (inventoryGegenstände - inventoryUsed) + " Platz");
-        System.out.println("Du kannst noch " + (inventoryWeapons - weaponsInventory.size()) + " Waffen tragen");
+        System.out.println("Du kannst noch " + (inventoryWeapons - inventoryUsedWeapons) + " Waffen tragen");
         if (inventory.isEmpty()) {
             System.out.println("Nichts dabei");
         } else {
             for (String i : inventory.keySet()) {
                 System.out.println(i + "   " + inventory.get(i));
             }
+            for (String i : weaponsInventory.keySet()) {
+                System.out.println(i + " " + weaponsInventory.get(i));
+            }
             System.out.println("Was willst du was benutzen?");
             System.out.println("[1] ja");
             System.out.println("[2] nein");
+            System.out.println("[3] Gegenstand fallen lassen");
             zwischenSpeicherZahlen = scanner.nextInt();
             System.out.println("ok");
             if (zwischenSpeicherZahlen == 1) {
@@ -180,6 +185,56 @@ public class Player extends PositionFinder {
                 }
                 if (hunger <= 0) {
                     hunger = 0;
+                }
+            } else if (zwischenSpeicherZahlen == 3) {
+                int anzahl = 1;
+                for (String i : inventory.keySet()) {
+                    System.out.println("[" + anzahl + "] " + i);
+                    temporarySpeicher.put(anzahl, i);
+                    anzahl++;
+                }
+                sprechenAuswahl = scanner.nextInt();
+                String x = temporarySpeicher.get(sprechenAuswahl);
+                Main.gegenstandListe.unseGegenstand(Main.player, x);
+
+                if (inventory.get(x) == 1) {
+                    inventory.remove(x);
+                } else {
+                    inventory.replace(x, inventory.get(x), inventory.get(x) - 1);
+                }
+                if (Main.player.position < 100) {
+                    switch (Main.player.position) {
+                        case 101:
+                            sumatra.gegenstaende.put(x, 1);
+                            break;
+                        case 102:
+                            taBuero.gegenstaende.put(x, 1);
+                            break;
+                        case 103:
+
+                            break;
+                        case 104:
+
+                            break;
+                        case 105:
+
+                            break;
+                        case 106:
+
+                            break;
+                        case 107:
+
+                            break;
+                        case 108:
+
+                            break;
+                        case 201:
+
+                            break;
+                        case 202:
+
+                            break;
+                    }
                 }
             }
         }

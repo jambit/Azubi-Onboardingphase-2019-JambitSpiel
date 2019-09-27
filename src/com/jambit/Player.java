@@ -27,8 +27,8 @@ public class Player extends PositionFinder {
     int position;
     //TODO Wichtig auf False setzen
 
-    boolean badge = true;
-    boolean badge2 = true;
+    boolean badge = false;
+    boolean badge2 = false;
     boolean maus;
     boolean nasenspray;
     boolean hartiEingewickelt;
@@ -103,7 +103,6 @@ public class Player extends PositionFinder {
     }
 
     void checkInventory() {
-        //todo bug anzahl
         for (String i : inventory.keySet()) {
             inventoryUsed = inventoryUsed + inventory.get(i);
         }

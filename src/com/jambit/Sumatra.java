@@ -63,8 +63,7 @@ public class Sumatra extends Room {
 
     void setSumatra() {
         gegenstaende.put("Apfel", 2);
-        //todo laptop weg
-        gegenstaende.put("Laptop", 4);
+
     }
 }
 

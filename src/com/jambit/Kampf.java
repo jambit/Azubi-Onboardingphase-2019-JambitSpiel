@@ -200,7 +200,7 @@ public class Kampf extends Main {
                 " \\ V /| (_) || |_| |  | |) || | | _| | |) | \n" +
                 "  |_|  \\___/  \\___/   |___/|___||___||___/  \n" +
                 "                                            \n");
-        musikPlayer.starteAbspielen("audio/");
+        musikPlayer.starteAbspielen("audio/TheBigDecision.mp3");
         System.out.println("Drücke eine Taste um neu zu starten");
 
         while (!scanner.hasNext()) {

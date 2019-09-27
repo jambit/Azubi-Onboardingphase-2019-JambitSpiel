@@ -38,7 +38,7 @@ public class MusikPlayer {
             Thread playerThread = new Thread() {
                 public void run() {
                     try {
-                        player.play(5000);
+                        player.play(50000);
                     } catch (JavaLayerException e) {
                         meldeProblem(dateiname);
                     } finally {

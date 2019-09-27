@@ -33,6 +33,7 @@ public class Player extends PositionFinder {
     boolean nasenspray;
     boolean hartiEingewickelt;
     boolean felliEingewickelt;
+    boolean cappuccino;
     int inventoryGegenstände = 5;
     int inventoryWeapons = 2;
     int inventoryUsed;

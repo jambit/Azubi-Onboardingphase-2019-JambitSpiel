@@ -60,6 +60,10 @@ public class Finanzbuero extends Room {
                 }
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
     void setFinanzbuero() {
         gegenstaende.put("Kaffee", 1);

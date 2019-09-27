@@ -41,6 +41,10 @@ public class Deli extends Room {
                 player.position = 3;
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 
     void setDeli() {

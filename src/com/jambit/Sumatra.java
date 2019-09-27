@@ -59,6 +59,10 @@ public class Sumatra extends Room {
                 }
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
 
     void setSumatra() {

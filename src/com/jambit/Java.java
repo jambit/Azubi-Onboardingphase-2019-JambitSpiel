@@ -31,6 +31,10 @@ public class Java extends Room{
                 player.position = 3;
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
     void setJava(){
         gegenstaende.put("Kuchen", 2);

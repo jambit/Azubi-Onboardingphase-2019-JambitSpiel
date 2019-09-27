@@ -36,7 +36,12 @@ public class TABuero extends Room {
                 player.position = 2;
                 break;
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
     }
+
     void setTABuero(){
         gegenstaende.put("Kugelschreiber", 2);
     }

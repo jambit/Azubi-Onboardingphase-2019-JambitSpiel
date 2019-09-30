@@ -158,7 +158,7 @@ public class Player extends PositionFinder {
             for (String i : weaponsInventory.keySet()) {
                 System.out.println(i + " " + weaponsInventory.get(i));
             }
-            System.out.println("Was willst du was benutzen?");
+            System.out.println("Was willst du benutzen?");
             System.out.println("[1] ja");
             System.out.println("[2] nein");
             System.out.println("[3] Gegenstand fallen lassen");

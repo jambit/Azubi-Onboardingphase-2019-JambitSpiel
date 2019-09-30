@@ -9,7 +9,7 @@ public class ChefBuero extends Room {
 
     void execute(Player player) {
         raumName = "Chef-Büro";
-        spezial = "Einwickeln";
+        spezial = "Einpacken";
         option(player, position);
         switch (auswahl) {
             case 3:
@@ -22,7 +22,7 @@ public class ChefBuero extends Room {
     }
 
     void einwickeln(){
-        System.out.println("Du darfst einen der Chefs einwickeln. Welchen von beiden möchtest du einwickeln?");
+        System.out.println("Du darfst, passend zum diesjährigen Motto, einen der Chefs einpacken. Welchen von beiden möchtest du einpacken?");
         int i = personPosition.antworten2("Harti", "Felli");
         switch (i){
             case 1:
@@ -32,13 +32,13 @@ public class ChefBuero extends Room {
                     int wharti = wickeln.nextInt();
                     if (zufallszahl == wharti){
                         Main.player.staerke += 10;
-                        System.out.println("Du hast Harti erfolgreich eingewickelt. Dadurch hat sich deine Stärke zu " + Main.player.staerke + " erhöht.");
+                        System.out.println("Du hast Harti erfolgreich eingepackt. Dadurch hat sich deine Stärke zu " + Main.player.staerke + " erhöht.");
                         Main.player.hartiEingewickelt = true;
                     } else {
                         System.out.println("Du hast es leider nicht geschafft.");
                     }
                 } else {
-                    System.out.println("Du hast Harti bereits eingewickelt.");
+                    System.out.println("Du hast Harti bereits eingepackt.");
                 }
                 break;
             case 2:
@@ -49,13 +49,13 @@ public class ChefBuero extends Room {
                     int wfelli = wickeln.nextInt();
                     if (zufallszahl == wfelli){
                         Main.player.staerke += 10;
-                        System.out.println("Du hast Felli erfolgreich eingewickelt. Dadurch hat sich deine Stärke zu " + Main.player.staerke + " erhöht.");
+                        System.out.println("Du hast Felli erfolgreich eingepackt. Dadurch hat sich deine Stärke zu " + Main.player.staerke + " erhöht.");
                         Main.player.felliEingewickelt = true;
                     } else {
                         System.out.println("Du hast es leider nicht geschafft.");
                     }
                 } else {
-                    System.out.println("Du hast Felli bereits eingewickelt.");
+                    System.out.println("Du hast Felli bereits eingepackt.");
                 }
                 break;
         }

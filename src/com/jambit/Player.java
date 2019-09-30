@@ -255,6 +255,53 @@ public class Player extends PositionFinder {
         System.out.println("Gesundheit:" + gesundheit);
         System.out.println("Intelligenz:" + intelligenz);
         System.out.println("Stärke:" + staerke);
+        System.out.println("");
+        System.out.println("[1] Help");
+        System.out.println("[2] Exit");
+        int statusAuswahl = scanner.nextInt();
+        switch (statusAuswahl){
+            case 1:
+                System.out.println("Welche Hilfe brauchst du?");
+                System.out.println("[1] allgemeine Info");
+                System.out.println("[2] Kampfinfo");
+                int hilfe = scanner.nextInt();
+                switch (hilfe){
+                    case 1:
+                        System.out.println("ALLGEMEINE INFO");
+                        System.out.println("Die Räume oritntieren sich an den jambit-Geschäftsräumen. Wie die Räume genau verteilt sind musst du selber heraus finden.");
+                        System.out.println("Um eine Zugangsbereichtigung für bestimmte Bereiche zu bekommen musst du dir erst ein/e Badge/Schlüsselkarte holen.");
+                        System.out.println("Deine Gesundheit kann max. einen Wert von 150 erreichen. Alle anderen Werte sind unbegrenzt. Wenn deiner Hunger 100 erreicht stirbst du.");
+                        System.out.println("");
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                        }
+                        break;
+                    case 2:
+                        System.out.println("KAMPFINFO");
+                        System.out.println("");
+                        System.out.println("Es gibt 3 Angriffsarten, leicht mittel und schwer");
+                        System.out.println("Die Wahrscheinlichkeit eines Treffers:");
+                        System.out.println("Leicht: 0,8*Intelligenz/100");
+                        System.out.println("Mittel: 0,6*Intelligenz/100");
+                        System.out.println("Schwer: 0,3*Intelligenz/100");
+                        System.out.println("");
+                        System.out.println("Schaden:");
+                        System.out.println("Leicht: 20*Stärke/10 + Waffenstärke*Intelligenz/10");
+                        System.out.println("Mittel: 50*Stärke/10 + Waffenstärke*Intelligenz/10");
+                        System.out.println("Schwer: 80*Stärke/10 + Waffenstärke*Intelligenz/10");
+                        System.out.println("Dein Gegner hat eine ihm zutreffende Trefferwahrscheinlichkeit und Schaden");
+                        System.out.println("");
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                break;
+        }
     }
 
     void checkDAUint() {

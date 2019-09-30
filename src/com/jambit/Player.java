@@ -188,52 +188,290 @@ public class Player extends PositionFinder {
                 }
             } else if (zwischenSpeicherZahlen == 3) {
                 int anzahl = 1;
-                for (String i : inventory.keySet()) {
-                    System.out.println("[" + anzahl + "] " + i);
-                    temporarySpeicher.put(anzahl, i);
-                    anzahl++;
-                }
+
+                System.out.println("Waffen oder normale Gegenstände?");
+                System.out.println("[1] Waffen");
+                System.out.println("[2] Normale Gegenstände");
                 sprechenAuswahl = scanner.nextInt();
-                String x = temporarySpeicher.get(sprechenAuswahl);
-                Main.gegenstandListe.unseGegenstand(Main.player, x);
+                scanner.nextLine();
+                if (sprechenAuswahl == 2) {
+                    for (String i : inventory.keySet()) {
+                        System.out.println("[" + anzahl + "] " + i);
+                        temporarySpeicher.put(anzahl, i);
+                        anzahl++;
+                    }
+                    sprechenAuswahl = scanner.nextInt();
+                    String x = temporarySpeicher.get(sprechenAuswahl);
 
-                if (inventory.get(x) == 1) {
-                    inventory.remove(x);
+
+                    if (inventory.get(x) == 1) {
+                        inventory.remove(x);
+                    } else {
+                        inventory.replace(x, inventory.get(x), inventory.get(x) - 1);
+                    }
+                    if (Main.player.position > 100) {
+                        switch (Main.player.position) {
+                            case 101:
+                                if (sumatra.gegenstaende.containsKey(x)) {
+                                    sumatra.gegenstaende.replace(x, sumatra.gegenstaende.get(x), (sumatra.gegenstaende.get(x) + 1));
+                                } else {
+                                    sumatra.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 102:
+                                if (empfang.gegenstaende.containsKey(x)) {
+                                    empfang.gegenstaende.replace(x, empfang.gegenstaende.get(x), (empfang.gegenstaende.get(x) + 1));
+                                } else {
+                                    empfang.gegenstaende.put(x, 1);
+                                }
+
+                                break;
+                            case 103:
+                                if (taBuero.gegenstaende.containsKey(x)) {
+                                    taBuero.gegenstaende.replace(x, taBuero.gegenstaende.get(x), (taBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    taBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 104:
+                                if (java.gegenstaende.containsKey(x)) {
+                                    java.gegenstaende.replace(x, java.gegenstaende.get(x), (java.gegenstaende.get(x) + 1));
+                                } else {
+                                    java.gegenstaende.put(x, 1);
+                                }
+
+                                break;
+                            case 105:
+                                if (deli.gegenstaende.containsKey(x)) {
+                                    deli.gegenstaende.replace(x, deli.gegenstaende.get(x), (deli.gegenstaende.get(x) + 1));
+                                } else {
+                                    deli.gegenstaende.put(x, 1);
+                                }
+
+                                break;
+                            case 106:
+                                if (kalimantan.gegenstaende.containsKey(x)) {
+                                    kalimantan.gegenstaende.replace(x, kalimantan.gegenstaende.get(x), (kalimantan.gegenstaende.get(x) + 1));
+                                } else {
+                                    kalimantan.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 107:
+                                if (chefBuero.gegenstaende.containsKey(x)) {
+                                    chefBuero.gegenstaende.replace(x, chefBuero.gegenstaende.get(x), (chefBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    chefBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 108:
+                                if (finanzbuero.gegenstaende.containsKey(x)) {
+                                    finanzbuero.gegenstaende.replace(x, finanzbuero.gegenstaende.get(x), (finanzbuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    finanzbuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 201:
+                                helpdesk.gegenstaende.put(x, 1);
+                                break;
+                            case 202:
+                                kickerraum.gegenstaende.put(x, 1);
+                                break;
+                        }
+
+                    } else {
+                        switch (Main.player.position) {
+                            case 1:
+                                if (sumatra.gegenstaende.containsKey(x)) {
+                                    sumatra.gegenstaende.replace(x, sumatra.gegenstaende.get(x), (sumatra.gegenstaende.get(x) + 1));
+                                } else {
+                                    sumatra.gegenstaende.put(x, 1);
+                                }
+
+                                break;
+                            case 2:
+                                if (taBuero.gegenstaende.containsKey(x)) {
+                                    taBuero.gegenstaende.replace(x, taBuero.gegenstaende.get(x), (taBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    taBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 3:
+                                if (java.gegenstaende.containsKey(x)) {
+                                    java.gegenstaende.replace(x, java.gegenstaende.get(x), (java.gegenstaende.get(x) + 1));
+                                } else {
+                                    java.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 4:
+                                if (kalimantan.gegenstaende.containsKey(x)) {
+                                    kalimantan.gegenstaende.replace(x, kalimantan.gegenstaende.get(x), (kalimantan.gegenstaende.get(x) + 1));
+                                } else {
+                                    kalimantan.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 6 | 7:
+                                if (chefBuero.gegenstaende.containsKey(x)) {
+                                    chefBuero.gegenstaende.replace(x, chefBuero.gegenstaende.get(x), (chefBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    chefBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+
+                            case 8:
+                                if (finanzbuero.gegenstaende.containsKey(x)) {
+                                    finanzbuero.gegenstaende.replace(x, finanzbuero.gegenstaende.get(x), (finanzbuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    finanzbuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 5:
+                                if (helpdesk.gegenstaende.containsKey(x)) {
+                                    helpdesk.gegenstaende.replace(x, helpdesk.gegenstaende.get(x), (helpdesk.gegenstaende.get(x) + 1));
+                                } else {
+                                    helpdesk.gegenstaende.put(x, 1);
+                                }
+                                break;
+                        }
+                    }
                 } else {
-                    inventory.replace(x, inventory.get(x), inventory.get(x) - 1);
-                }
-                if (Main.player.position < 100) {
-                    switch (Main.player.position) {
-                        case 101:
-                            sumatra.gegenstaende.put(x, 1);
-                            break;
-                        case 102:
-                            taBuero.gegenstaende.put(x, 1);
-                            break;
-                        case 103:
+                    for (String i : weaponsInventory.keySet()) {
+                        System.out.println("[" + anzahl + "] " + i);
+                        temporarySpeicher.put(anzahl, i);
+                        anzahl++;
+                    }
+                    sprechenAuswahl = scanner.nextInt();
+                    String x = temporarySpeicher.get(sprechenAuswahl);
 
-                            break;
-                        case 104:
 
-                            break;
-                        case 105:
+                    if (weaponsInventory.get(x) == 1) {
+                        weaponsInventory.remove(x);
+                    } else {
+                        weaponsInventory.replace(x, weaponsInventory.get(x), weaponsInventory.get(x) - 1);
+                    }
 
-                            break;
-                        case 106:
+                    if (Main.player.position > 100) {
+                        switch (Main.player.position) {
+                            case 101:
+                                if (sumatra.gegenstaende.containsKey(x)) {
+                                    sumatra.gegenstaende.replace(x, sumatra.gegenstaende.get(x), (sumatra.gegenstaende.get(x) + 1));
+                                } else {
+                                    sumatra.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 102:
+                                if (empfang.gegenstaende.containsKey(x)) {
+                                    empfang.gegenstaende.replace(x, empfang.gegenstaende.get(x), (empfang.gegenstaende.get(x) + 1));
+                                } else {
+                                    empfang.gegenstaende.put(x, 1);
+                                }
 
-                            break;
-                        case 107:
+                                break;
+                            case 103:
+                                if (taBuero.gegenstaende.containsKey(x)) {
+                                    taBuero.gegenstaende.replace(x, taBuero.gegenstaende.get(x), (taBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    taBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 104:
+                                if (java.gegenstaende.containsKey(x)) {
+                                    java.gegenstaende.replace(x, java.gegenstaende.get(x), (java.gegenstaende.get(x) + 1));
+                                } else {
+                                    java.gegenstaende.put(x, 1);
+                                }
 
-                            break;
-                        case 108:
+                                break;
+                            case 105:
+                                if (deli.gegenstaende.containsKey(x)) {
+                                    deli.gegenstaende.replace(x, deli.gegenstaende.get(x), (deli.gegenstaende.get(x) + 1));
+                                } else {
+                                    deli.gegenstaende.put(x, 1);
+                                }
 
-                            break;
-                        case 201:
+                                break;
+                            case 106:
+                                if (kalimantan.gegenstaende.containsKey(x)) {
+                                    kalimantan.gegenstaende.replace(x, kalimantan.gegenstaende.get(x), (kalimantan.gegenstaende.get(x) + 1));
+                                } else {
+                                    kalimantan.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 107:
+                                if (chefBuero.gegenstaende.containsKey(x)) {
+                                    chefBuero.gegenstaende.replace(x, chefBuero.gegenstaende.get(x), (chefBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    chefBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 108:
+                                if (finanzbuero.gegenstaende.containsKey(x)) {
+                                    finanzbuero.gegenstaende.replace(x, finanzbuero.gegenstaende.get(x), (finanzbuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    finanzbuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 201:
+                                helpdesk.gegenstaende.put(x, 1);
+                                break;
+                            case 202:
+                                kickerraum.gegenstaende.put(x, 1);
+                                break;
+                        }
 
-                            break;
-                        case 202:
+                    } else {
+                        switch (Main.player.position) {
+                            case 1:
+                                if (sumatra.gegenstaende.containsKey(x)) {
+                                    sumatra.gegenstaende.replace(x, sumatra.gegenstaende.get(x), (sumatra.gegenstaende.get(x) + 1));
+                                } else {
+                                    sumatra.gegenstaende.put(x, 1);
+                                }
 
-                            break;
+                                break;
+                            case 2:
+                                if (taBuero.gegenstaende.containsKey(x)) {
+                                    taBuero.gegenstaende.replace(x, taBuero.gegenstaende.get(x), (taBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    taBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 3:
+                                if (java.gegenstaende.containsKey(x)) {
+                                    java.gegenstaende.replace(x, java.gegenstaende.get(x), (java.gegenstaende.get(x) + 1));
+                                } else {
+                                    java.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 4:
+                                if (kalimantan.gegenstaende.containsKey(x)) {
+                                    kalimantan.gegenstaende.replace(x, kalimantan.gegenstaende.get(x), (kalimantan.gegenstaende.get(x) + 1));
+                                } else {
+                                    kalimantan.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 6 | 7:
+                                if (chefBuero.gegenstaende.containsKey(x)) {
+                                    chefBuero.gegenstaende.replace(x, chefBuero.gegenstaende.get(x), (chefBuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    chefBuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+
+                            case 8:
+                                if (finanzbuero.gegenstaende.containsKey(x)) {
+                                    finanzbuero.gegenstaende.replace(x, finanzbuero.gegenstaende.get(x), (finanzbuero.gegenstaende.get(x) + 1));
+                                } else {
+                                    finanzbuero.gegenstaende.put(x, 1);
+                                }
+                                break;
+                            case 5:
+                                if (helpdesk.gegenstaende.containsKey(x)) {
+                                    helpdesk.gegenstaende.replace(x, helpdesk.gegenstaende.get(x), (helpdesk.gegenstaende.get(x) + 1));
+                                } else {
+                                    helpdesk.gegenstaende.put(x, 1);
+                                }
+                                break;
+                        }
                     }
                 }
             }
@@ -259,13 +497,13 @@ public class Player extends PositionFinder {
         System.out.println("[1] Help");
         System.out.println("[2] Exit");
         int statusAuswahl = scanner.nextInt();
-        switch (statusAuswahl){
+        switch (statusAuswahl) {
             case 1:
                 System.out.println("Welche Hilfe brauchst du?");
                 System.out.println("[1] allgemeine Info");
                 System.out.println("[2] Kampfinfo");
                 int hilfe = scanner.nextInt();
-                switch (hilfe){
+                switch (hilfe) {
                     case 1:
                         System.out.println("ALLGEMEINE INFO");
                         System.out.println("Die Räume oritntieren sich an den jambit-Geschäftsräumen. Wie die Räume genau verteilt sind musst du selber heraus finden.");

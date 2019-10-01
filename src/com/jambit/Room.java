@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 
-public class Room {
+abstract class Room {
     public static PersonPosition personPosition = new PersonPosition();
     static Scanner scanner = new Scanner(System.in);
     public static int auswahl;

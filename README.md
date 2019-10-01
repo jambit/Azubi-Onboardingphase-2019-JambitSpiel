@@ -1,4 +1,4 @@
-#JambitSpiel
+# JambitSpiel
 A textbased RPG, which is based on the jambit rooms.
 ## How to run the code?
 - copy the path of the repository
